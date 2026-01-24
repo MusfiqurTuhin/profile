@@ -12,7 +12,7 @@ import { useMode } from "@/components/context/mode-context";
 import StoryLayout from "@/components/story/story-layout";
 import StoryHero from "@/components/story/sections/hero";
 import Foundation from "@/components/story/sections/foundation";
-import TravelMap from "@/components/sections/travel-map";
+import TravelMapInteractive from "@/components/sections/travel-map-interactive";
 import Lifeline from "@/components/story/sections/lifeline";
 import Renaissance from "@/components/story/sections/renaissance";
 import Ovizatri from "@/components/story/sections/ovizatri";
@@ -45,7 +45,7 @@ export default function Home() {
           <EarlyActivism />
           <Lifeline />
           <Foundation />
-          <TravelMap />
+          <TravelMapInteractive />
         </StoryLayout>
       )}
 

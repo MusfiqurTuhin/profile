@@ -1,0 +1,397 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Dhaka",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.4074,
+                    23.7644
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gazipur",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.4203,
+                    24.0022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kishoreganj",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.7767,
+                    24.4260
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Manikganj",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.0003,
+                    23.8617
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Munshiganj",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.5303,
+                    23.5422
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Narayanganj",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.5000,
+                    23.6238
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Narsingdi",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.7153,
+                    23.9229
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Tangail",
+                "division": "Dhaka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    89.9167,
+                    24.2500
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Brahmanbaria",
+                "division": "Chattogram"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.1119,
+                    23.9608
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Chattogram",
+                "division": "Chattogram"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.8317,
+                    22.3569
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cox's Bazar",
+                "division": "Chattogram"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.9815,
+                    21.4272
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cumilla",
+                "division": "Chattogram"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.1809,
+                    23.4682
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Feni",
+                "division": "Chattogram"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.4039,
+                    23.0159
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Khagrachhari",
+                "division": "Chattogram"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.9846,
+                    23.1193
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Khulna",
+                "division": "Khulna"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    89.5403,
+                    22.8156
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Habiganj",
+                "division": "Sylhet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.4156,
+                    24.3745
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Moulvibazar",
+                "division": "Sylhet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.7312,
+                    24.3090
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sunamganj",
+                "division": "Sylhet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.3965,
+                    25.0658
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sylhet",
+                "division": "Sylhet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    91.8710,
+                    24.8949
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Dinajpur",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    88.6354,
+                    25.6217
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Gaibandha",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    89.5279,
+                    25.3285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kurigram",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    89.6361,
+                    25.8070
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lalmonirhat",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    89.4453,
+                    25.9174
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Nilphamari",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    88.9419,
+                    25.9483
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Panchagarh",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    88.5541,
+                    26.3411
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Rangpur",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    89.2444,
+                    25.7439
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Thakurgaon",
+                "division": "Rangpur"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    88.4616,
+                    26.0336
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mymensingh",
+                "division": "Mymensingh"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.4074,
+                    24.7471
+                ]
+            }
+        }
+    ]
+}
