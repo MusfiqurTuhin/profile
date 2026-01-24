@@ -44,11 +44,24 @@ export default function TravelMap() {
                     </div>
                 </div>
 
-                {/* Map Placeholder - Will be replaced with actual SVG map */}
+                {/* Interactive Bangladesh Map */}
                 <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-stone-200">
-                    <div className="text-center text-stone-500 py-20">
-                        <p className="text-2xl font-bold mb-4">Interactive Map Coming Soon</p>
-                        <p className="text-lg">SVG map of Bangladesh with clickable districts will be integrated here</p>
+                    <div className="relative max-w-2xl mx-auto">
+                        {/* SVG Map Container */}
+                        <div className="relative">
+                            <img
+                                src="/images/story/BD_Map_admin.svg"
+                                alt="Interactive Bangladesh Map"
+                                className="w-full h-auto"
+                                style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))' }}
+                            />
+                            {/* Overlay for hover hints */}
+                            <div className="absolute bottom-4 left-0 right-0 text-center">
+                                <p className="text-xs md:text-sm text-stone-500 font-mono uppercase tracking-wider bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg inline-block">
+                                    {visitedCount} Districts Explored
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
