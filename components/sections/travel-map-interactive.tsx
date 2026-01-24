@@ -78,10 +78,10 @@ export default function TravelMapInteractive() {
             {/* Header */}
             <div className="max-w-7xl mx-auto mb-12 text-center">
                 <h2 className="text-5xl md:text-7xl font-black text-stone-900 tracking-tight mb-4 font-mono uppercase">
-                    The Architect's Desk
+                    Ovizatri
                 </h2>
                 <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto">
-                    Mapping {visitedCount} districts across Bangladesh — a documentary archive of exploration
+                    Exploring Bangladesh, one district at a time — 28 destinations and counting
                 </p>
             </div>
 
@@ -211,10 +211,6 @@ export default function TravelMapInteractive() {
 
                 {/* RIGHT: Chaotic Round Photo Gallery */}
                 <div className="space-y-6">
-                    <div className="font-mono text-xs text-stone-500 uppercase tracking-widest">
-                        Field Evidence // 37 Entries
-                    </div>
-
                     {/* Chaotic Scattered Photo Grid */}
                     <div className="relative min-h-screen">
                         {[
