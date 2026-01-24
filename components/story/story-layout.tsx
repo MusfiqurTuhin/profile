@@ -96,21 +96,7 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
                     }),
                 });
 
-                // Travel Section - Hide Age/Year
-                ScrollTrigger.create({
-                    trigger: "#travel",
-                    start: "top center",
-                    onEnter: () => setGameState({
-                        age: "",
-                        year: "",
-                        visible: false // Hide age/year for travel section
-                    }),
-                    onLeaveBack: () => setGameState({
-                        age: ovizatri?.age || "14-18",
-                        year: ovizatri?.yearRange || "2016-2020",
-                        visible: true
-                    }),
-                });
+
 
                 // Early Activism
                 ScrollTrigger.create({
@@ -122,9 +108,9 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
                         visible: true
                     }),
                     onLeaveBack: () => setGameState({
-                        age: "",
-                        year: "",
-                        visible: false // Coming back from early activism means we're in travel
+                        age: ovizatri?.age || "14-18",
+                        year: ovizatri?.yearRange || "2016-2020",
+                        visible: true
                     }),
                 });
 
@@ -156,6 +142,22 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
                     onLeaveBack: () => setGameState({
                         age: lifeline?.age || "15-24",
                         year: lifeline?.yearRange || "2017-2026",
+                        visible: true
+                    }),
+                });
+
+                // Travel Section - Hide Age/Year (comes after Foundation in page order)
+                ScrollTrigger.create({
+                    trigger: "#travel",
+                    start: "top center",
+                    onEnter: () => setGameState({
+                        age: "",
+                        year: "",
+                        visible: false // Hide age/year for travel section
+                    }),
+                    onLeaveBack: () => setGameState({
+                        age: foundation?.age || "11-13",
+                        year: foundation?.yearRange || "2013-2015",
                         visible: true
                     }),
                 });
