@@ -46,9 +46,7 @@ export default function Navbar() {
                 <h1 className="text-lg md:text-xl font-bold tracking-tighter uppercase cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                     Musfiqur Tuhin
                 </h1>
-                <p className="text-[10px] md:text-xs opacity-70 hidden sm:block ml-2">
-                    {mode === "corporate" ? "AI & Machine Learning" : ""}
-                </p>
+                {/* Subtitle removed as requested */}
             </div>
 
             {/* Right Side: Toggle + Menu */}
@@ -57,13 +55,13 @@ export default function Navbar() {
                 {/* Toggle: Relative on Mobile/Tablet (Right), Absolute Center on Desktop */}
                 <div className="relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center justify-center gap-2">
                     <div className={cn(
-                        "flex items-center gap-2 px-2 py-1.5 md:px-3 md:py-2 rounded-full border backdrop-blur-md transition-colors duration-300",
+                        "flex items-center gap-1.5 px-1 py-1 md:gap-2 md:px-3 md:py-2 rounded-full border backdrop-blur-md transition-colors duration-300",
                         mode === "corporate" ? "bg-zinc-900/50 border-white/10" : "bg-white/50 border-black/5"
                     )}>
                         <span
                             onClick={() => mode !== "corporate" && toggleMode()}
                             className={cn(
-                                "text-[10px] md:text-xs px-3 py-1 rounded-full transition-all duration-300 font-bold cursor-pointer select-none",
+                                "text-[9px] md:text-xs px-2 py-0.5 md:px-3 md:py-1 rounded-full transition-all duration-300 font-bold cursor-pointer select-none",
                                 mode === "corporate"
                                     ? "bg-white text-black shadow-sm"
                                     : "text-stone-500 hover:text-black"
@@ -74,13 +72,13 @@ export default function Navbar() {
 
                         <button
                             onClick={toggleMode}
-                            className="w-10 h-5 lg:w-12 lg:h-6 bg-white/10 rounded-full relative p-1 transition-colors hover:bg-white/20 border border-white/10"
+                            className="w-8 h-4 lg:w-12 lg:h-6 bg-white/10 rounded-full relative p-0.5 lg:p-1 transition-colors hover:bg-white/20 border border-white/10"
                             aria-label="Toggle Mode"
                         >
                             <div
                                 className={cn(
-                                    "w-3 h-3 md:w-4 md:h-4 rounded-full bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                                    mode === "story" ? "translate-x-5 lg:translate-x-6 bg-amber-400" : "translate-x-0 bg-sky-400"
+                                    "w-2.5 h-2.5 md:w-4 md:h-4 rounded-full bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                                    mode === "story" ? "translate-x-4 lg:translate-x-6 bg-amber-400" : "translate-x-0 bg-sky-400"
                                 )}
                             />
                         </button>
@@ -88,7 +86,7 @@ export default function Navbar() {
                         <span
                             onClick={() => mode !== "story" && toggleMode()}
                             className={cn(
-                                "text-[10px] md:text-xs px-3 py-1 rounded-full transition-all duration-300 font-bold cursor-pointer select-none",
+                                "text-[9px] md:text-xs px-2 py-0.5 md:px-3 md:py-1 rounded-full transition-all duration-300 font-bold cursor-pointer select-none",
                                 mode === "story"
                                     ? "bg-black text-white shadow-sm"
                                     : "text-zinc-500 hover:text-white"
