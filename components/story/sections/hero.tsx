@@ -40,7 +40,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={containerRef} className="h-screen w-full flex items-center justify-center relative overflow-hidden">
+        <section ref={containerRef} className="h-screen w-full flex items-center justify-center relative overflow-hidden pt-24">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#F5F5F7] to-[#E5E5E5] z-0" />
 

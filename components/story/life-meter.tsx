@@ -34,7 +34,7 @@ export default function LifeMeter({ age, year, visible }: LifeMeterProps) {
 
     return (
         <div
-            className={`fixed top-8 right-8 z-[100] text-right pointer-events-none transition-all duration-500 ease-in-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+            className={`fixed top-28 right-8 z-[100] text-right pointer-events-none transition-all duration-500 ease-in-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
                 }`}
         >
             <div className="flex flex-col items-end bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-2xl">
