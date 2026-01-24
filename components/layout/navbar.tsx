@@ -32,7 +32,7 @@ export default function Navbar() {
 
     return (
         <nav className={cn(
-            "absolute top-0 left-0 w-full z-50 p-6 flex justify-between items-center transition-colors duration-300 backdrop-blur-md border-b-[0.5px]",
+            "fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center transition-colors duration-300 backdrop-blur-md border-b-[0.5px]",
             mode === "corporate"
                 ? "bg-black/50 text-white border-white/10"
                 : "bg-stone-50/60 text-stone-900 border-black/5"
