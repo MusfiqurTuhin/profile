@@ -9,51 +9,63 @@ interface SmartVideoProps {
 }
 
 export default function SmartVideo({ src, poster, className = "" }: SmartVideoProps) {
-    const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [isHovered, setIsHovered] = useState(false);
 
-    const handleInteraction = () => {
-        setIsPlaying(true);
-        // Wait for state update then play
-        setTimeout(() => videoRef.current?.play(), 0);
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        if (videoRef.current) {
+            videoRef.current.muted = false; // Restore sound on hover
+            videoRef.current.play().catch(() => { });
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0; // Reset to start
+            videoRef.current.muted = true;
+        }
     };
 
     return (
         <div
-            className={`relative overflow-hidden ${className} group cursor-pointer`}
-            onMouseEnter={handleInteraction} // Load on Hover
-            onTouchStart={handleInteraction} // Load on Tap (Mobile)
+            className={`relative overflow-hidden ${className} group cursor-pointer bg-black`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
-            {/* Thumbnail Image - Visible until played */}
-            <div
-                className={`absolute inset-0 z-10 transition-opacity duration-500 bg-zinc-900 flex items-center justify-center ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
-            >
-                {poster ? (
+            {/* Optional Poster Image (if provided) */}
+            {poster && !isHovered && (
+                <div className="absolute inset-0 z-20 pointer-events-none">
                     <Image
                         src={poster}
                         alt="Video thumbnail"
                         fill
                         className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw" // Responsive sizing
                     />
-                ) : (
-                    /* Fallback UI when no poster is available */
-                    <div className="flex flex-col items-center gap-2 text-white/30 group-hover:text-white/50 transition-colors">
-                        <Play className="w-12 h-12 fill-current" />
-                        <span className="text-[10px] font-mono tracking-widest uppercase">Video Preview</span>
-                    </div>
-                )}
+                </div>
+            )}
+
+            {/* Play Overlay - Visible when not hovering */}
+            <div
+                className={`absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300 pointer-events-none ${isHovered ? 'opacity-0' : 'opacity-100'}`}
+            >
+                <div className="bg-black/30 p-3 rounded-full backdrop-blur-sm border border-white/10">
+                    <Play className="w-6 h-6 text-white/90 fill-current" />
+                </div>
             </div>
 
-            {/* The video tag exists but src is only fully active/playing when needed */}
             <video
                 ref={videoRef}
                 src={src}
-                preload="none" // KEY: Don't download bytes until requested
+                // preload="metadata" ensures the first frame is downloaded and shown
+                // alleviating the "blank black" issue
+                preload="metadata"
                 loop
-                muted
+                muted // Start muted
                 playsInline
-                className={`w-full h-full object-cover relative z-0 ${isPlaying ? 'opacity-100' : 'opacity-0'}`} // Hide video until playing to avoid flash
+                className="w-full h-full object-cover"
             />
         </div>
     );
