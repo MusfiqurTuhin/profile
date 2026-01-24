@@ -53,7 +53,10 @@ export default function Navbar() {
             <div className="pointer-events-auto z-50 flex items-center gap-3 lg:gap-6">
 
                 {/* Toggle: Relative on Mobile/Tablet (Right), Absolute Center on Desktop */}
-                <div className="relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center justify-center gap-2">
+                <div className={cn(
+                    "relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center justify-center gap-2 transition-opacity duration-300",
+                    mobileMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+                )}>
                     <div className={cn(
                         "flex items-center gap-1.5 px-1 py-1 md:gap-2 md:px-3 md:py-2 rounded-full border backdrop-blur-md transition-colors duration-300",
                         mode === "corporate" ? "bg-zinc-900/50 border-white/10" : "bg-white/50 border-black/5"
