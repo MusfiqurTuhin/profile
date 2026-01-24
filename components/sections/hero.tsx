@@ -86,10 +86,12 @@ export default function Hero() {
                 {/* Top HUD */}
                 <div className={`absolute top-[-15vh] md:top-[-20vh] left-0 right-0 px-4 md:px-0 flex justify-between text-[8px] md:text-xs font-mono uppercase tracking-widest data-stream ${mode === "story" ? "text-stone-500/60" : "text-cyan-500/40"}`}>
                     <div className="flex gap-2 md:gap-4">
-                        <span className="flex items-center gap-1 md:gap-2">
-                            <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse ${mode === "story" ? "bg-red-600" : "bg-cyan-500"}`} />
-                            {mode === "story" ? "VOICE ACTIVE" : "ONLINE"}
-                        </span>
+                        {mode === "story" && (
+                            <span className="flex items-center gap-1 md:gap-2">
+                                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse bg-red-600" />
+                                VOICE ACTIVE
+                            </span>
+                        )}
                         <span className="hidden sm:inline">{mode === "story" ? "BANGLADESH" : "DHAKA"}</span>
                     </div>
                     <div className="hidden md:block">{mode === "story" ? "JULY_SPIRIT" : "SECURE_V4.2"}</div>
@@ -137,13 +139,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Vertical Data Decor */}
-                <div className="absolute right-4 md:right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 text-[10px] font-mono text-white/20 text-right data-stream hidden md:flex">
-                    <span className="border-r-2 border-cyan-500/30 pr-4">REACT_FIBER</span>
-                    <span className="border-r-2 border-purple-500/30 pr-4">NEXT_JS_15</span>
-                    <span className="border-r-2 border-emerald-500/30 pr-4">TAILWIND_V4</span>
-                    <span className="border-r-2 border-white/10 pr-4">GSAP_Core</span>
-                </div>
+                {/* Vertical Data Decor - Removed as requested */}
             </div>
 
             {/* Scroll indicator */}
