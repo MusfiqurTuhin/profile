@@ -212,7 +212,7 @@ export default function TravelMapInteractive() {
                 {/* RIGHT: Photo Gallery - Mobile Optimized */}
                 <div className="relative min-h-[50vh] lg:min-h-screen">
                     <div className="lg:relative lg:h-screen">
-                        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:block lg:relative lg:h-full">
+                        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:block lg:relative lg:h-full p-4">
                             {[
                                 "468526371_17994753080714591_832146755417126345_n.jpg",
                                 "480474287_1022664116634283_6861207374996785542_n.jpg",
@@ -298,11 +298,16 @@ export default function TravelMapInteractive() {
                                             </div>
                                         </div>
 
-                                        {/* Mobile Grid Item */}
-                                        <div className="lg:hidden block">
+                                        {/* Mobile Grid Item - Now Chaotic */}
+                                        <div className="lg:hidden block transform transition-all duration-500"
+                                            style={{
+                                                transform: `rotate(${randomRotation}deg) scale(${randomScale})`,
+                                                margin: `${Math.abs(randomRotation)}px`, // Add some spacing based on rotation to prevent overlap
+                                            }}
+                                        >
                                             <div className="bg-white p-1 rounded shadow-sm">
                                                 <div className="aspect-square rounded-full overflow-hidden border-2 border-white shadow-inner bg-stone-100">
-                                                    <img src={`/images/Travel/${filename}`} alt={`Travel ${idx + 1}`} className="w-full h-full object-cover" />
+                                                    <img src={`/images/Travel/${filename}`} alt={`Travel ${idx + 1}`} className="w-full h-full object-cover grayscale" />
                                                 </div>
                                             </div>
                                         </div>
