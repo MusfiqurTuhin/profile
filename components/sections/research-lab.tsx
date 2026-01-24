@@ -20,7 +20,7 @@ export default function ResearchLab() {
     }, { scope: container });
 
     return (
-        <section ref={container} className="min-h-screen w-full py-12 md:py-20 px-4 md:px-8 bg-gradient-to-b from-black via-zinc-950 to-black relative z-10">
+        <section id="research" ref={container} className="min-h-screen w-full py-12 md:py-20 px-4 md:px-8 bg-gradient-to-b from-black via-zinc-950 to-black relative z-10">
             {/* Animated Matrix Background */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div className="absolute inset-0" style={{

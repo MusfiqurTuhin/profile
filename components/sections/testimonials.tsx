@@ -22,7 +22,7 @@ export default function Testimonials() {
     }, { scope: container });
 
     return (
-        <section ref={container} className="w-full py-24 px-4 md:px-8 bg-black relative z-10 overflow-hidden flex flex-col items-center justify-center">
+        <section id="impact" ref={container} className="w-full py-24 px-4 md:px-8 bg-black relative z-10 overflow-hidden flex flex-col items-center justify-center">
             {/* Background Texture */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{

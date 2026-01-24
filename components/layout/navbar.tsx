@@ -7,10 +7,33 @@ import { Frame, BookOpen } from "lucide-react"; // Icons for Corporate/Story
 export default function Navbar() {
     const { mode, toggleMode } = useMode();
 
+    const corpLinks = [
+        { label: "Research", id: "research" },
+        { label: "Software", id: "software" },
+        { label: "Education", id: "education" },
+        { label: "Impact", id: "impact" },
+    ];
+
+    const storyLinks = [
+        { label: "Revolution", id: "revolution" },
+        { label: "Renaissance", id: "renaissance" },
+        { label: "Sparks", id: "early-activism" },
+        { label: "Ovizatri", id: "ovizatri" },
+        { label: "Lifeline", id: "lifeline" },
+        { label: "Foundation", id: "foundation" },
+    ];
+
+    const handleScroll = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <nav className="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center mix-blend-difference text-white pointer-events-none">
             <div className="pointer-events-auto">
-                <h1 className="text-xl font-bold tracking-tighter uppercase">
+                <h1 className="text-xl font-bold tracking-tighter uppercase cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                     Musfiqur Tuhin
                 </h1>
                 <p className="text-xs opacity-70">
@@ -49,6 +72,24 @@ export default function Navbar() {
                         TAP TO SWITCH OR SCROLL DOWN
                     </div>
                 </div>
+            </div>
+
+            {/* Right Navigation */}
+            <div className="pointer-events-auto hidden md:flex items-center gap-6">
+                {(mode === "corporate" ? corpLinks : storyLinks).map((link) => (
+                    <button
+                        key={link.id}
+                        onClick={() => handleScroll(link.id)}
+                        className={cn(
+                            "text-xs uppercase tracking-widest transition-colors hover:scale-105 active:scale-95",
+                            mode === "corporate"
+                                ? "font-mono text-zinc-400 hover:text-cyan-400"
+                                : "font-sans font-bold text-zinc-300 hover:text-red-500 mix-blend-difference"
+                        )}
+                    >
+                        {link.label}
+                    </button>
+                ))}
             </div>
         </nav>
     );
