@@ -62,39 +62,94 @@ export default function Hero() {
 
     }, { scope: container });
 
-    return (
-        <section ref={container} className={`relative h-screen w-full flex flex-col items-center justify-center overflow-hidden ${mode === "story" ? "bg-stone-50" : "bg-[#030305]"}`}>
-            {/* 3D Background - Corp Mode Only */}
-            {mode === "corporate" && <CyberGrid />}
+    // Story/Legacy Mode: The Maverick Design
+    if (mode === "story") {
+        return (
+            <section className="relative h-screen w-full bg-[#F5F5F7] text-[#1A1A1A] overflow-hidden flex flex-col justify-between py-6 md:py-0">
 
-            {/* Story Mode: Warm Gradient Background */}
-            {mode === "story" && (
-                <div className="absolute inset-0 bg-gradient-to-br from-stone-50 via-red-50 to-amber-50 opacity-60" />
-            )}
+                {/* --- GRID BACKGROUND --- */}
+                <div className="absolute inset-0 z-0 opacity-[0.03]"
+                    style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+                </div>
+
+                {/* --- TOP: THINKER --- */}
+                <div className="relative z-10 flex justify-center items-start h-[25vh] md:h-[30vh]">
+                    <h1 className="text-[18vw] md:text-[15vw] font-black tracking-tighter leading-none text-[#1A1A1A] mix-blend-darken select-none">
+                        THINKER.
+                    </h1>
+                </div>
+
+                {/* --- CENTER: THE MONOLITH --- */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[280px] md:w-[400px] group">
+
+                    {/* The Image Container */}
+                    <div className="relative bg-black shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                        {/* Your Image with Black BG */}
+                        <img
+                            src="/images/story/Md Musfiqur Rahman.jpg"
+                            alt="Musfiqur Tuhin"
+                            className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                        />
+
+                        {/* Tech Detail: Corner Label */}
+                        <div className="absolute top-0 left-0 bg-white/10 backdrop-blur-md px-3 py-1">
+                            <span className="font-mono text-[10px] text-white tracking-widest uppercase">
+                                Archive_ID: 2002
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* --- THE MAVERICK STAMP --- */}
+                    {/* This overlaps the image and background */}
+                    <div className="absolute -bottom-8 md:-bottom-10 -right-8 md:-right-20 z-30">
+                        <h2 className="text-5xl md:text-8xl font-serif italic text-[#D60000] tracking-tighter leading-none mix-blend-normal transform -rotate-6">
+                            Maverick.
+                        </h2>
+                        {/* Decorative Red Line */}
+                        <div className="h-2 w-full bg-[#D60000] mt-2 transform -skew-x-12"></div>
+                    </div>
+
+                </div>
+
+                {/* --- BOTTOM: ORGANIZER --- */}
+                <div className="relative z-10 flex justify-center items-end h-[25vh] md:h-[30vh]">
+                    <h1 className="text-[18vw] md:text-[15vw] font-black tracking-tighter leading-none text-[#1A1A1A] mix-blend-darken select-none">
+                        ORGANIZER.
+                    </h1>
+                </div>
+
+                {/* --- FOOTER: DATA STREAM --- */}
+                <div className="absolute bottom-4 md:bottom-6 w-full flex justify-between px-4 md:px-12 font-mono text-[9px] md:text-xs text-gray-400 z-40 uppercase tracking-widest">
+                    <span>[ Loc: Dhaka, BD ]</span>
+                    <span className="hidden md:block">Logic & Legacy System</span>
+                    <span>[ Est. 2002 ]</span>
+                </div>
+
+            </section>
+        );
+    }
+
+    // Logic/Corporate Mode: Keep existing cyber design
+    return (
+        <section ref={container} className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#030305]">
+            {/* 3D Background - Corp Mode Only */}
+            <CyberGrid />
 
             {/* Vignette Overlay */}
-            <div className={`absolute inset-0 z-0 pointer-events-none ${mode === "story" ? "bg-radial-gradient from-transparent to-stone-100/90" : "bg-radial-gradient from-transparent to-[#030305]/90"}`} />
+            <div className="absolute inset-0 z-0 pointer-events-none bg-radial-gradient from-transparent to-[#030305]/90" />
 
             {/* Horizontal Scanline - Corp Mode Only */}
-            {mode === "corporate" && (
-                <div className="absolute w-full h-1 bg-cyan-500/20 top-0 animate-scanline z-0 blur-sm pointer-events-none" />
-            )}
+            <div className="absolute w-full h-1 bg-cyan-500/20 top-0 animate-scanline z-0 blur-sm pointer-events-none" />
 
             {/* Content Overlay */}
             <div className="z-10 w-full max-w-7xl px-4 relative">
 
                 {/* Top HUD */}
-                <div className={`absolute top-[-15vh] md:top-[-20vh] left-0 right-0 px-4 md:px-0 flex justify-between text-[8px] md:text-xs font-mono uppercase tracking-widest data-stream ${mode === "story" ? "text-stone-500/60" : "text-cyan-500/40"}`}>
+                <div className="absolute top-[-15vh] md:top-[-20vh] left-0 right-0 px-4 md:px-0 flex justify-between text-[8px] md:text-xs font-mono uppercase tracking-widest data-stream text-cyan-500/40">
                     <div className="flex gap-2 md:gap-4">
-                        {mode === "story" && (
-                            <span className="flex items-center gap-1 md:gap-2">
-                                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse bg-red-600" />
-                                VOICE ACTIVE
-                            </span>
-                        )}
-                        <span className="hidden sm:inline">{mode === "story" ? "BANGLADESH" : "DHAKA"}</span>
+                        <span className="hidden sm:inline">DHAKA</span>
                     </div>
-                    <div className="hidden md:block">{mode === "story" ? "JULY_SPIRIT" : "SECURE_V4.2"}</div>
+                    <div className="hidden md:block">SECURE_V4.2</div>
                 </div>
 
                 <div className="relative mb-8 group flex justify-center">
@@ -110,12 +165,9 @@ export default function Hero() {
                 </div>
 
                 <div className="relative text-center md:text-left mix-blend-screen">
-                    <div className={`w-24 h-1 hero-line mb-6 hidden md:block ${mode === "story" ? "bg-red-600" : "bg-cyan-500"}`} />
+                    <div className="w-24 h-1 hero-line mb-6 hidden md:block bg-cyan-500" />
 
-                    <h1 className={`glitch-title text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 md:mb-4 ${mode === "story"
-                        ? "text-stone-900"
-                        : "text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white filter drop-shadow-[0_0_10px_rgba(0,240,255,0.3)]"
-                        }`}>
+                    <h1 className="glitch-title text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white filter drop-shadow-[0_0_10px_rgba(0,240,255,0.3)]">
                         {glitchText}
                     </h1>
 
@@ -130,11 +182,10 @@ export default function Hero() {
 
                         <div className="h-px w-12 bg-white/10 hidden md:block" />
 
-                        <p className={`text-sm sm:text-lg md:text-xl lg:text-2xl font-light tracking-widest uppercase data-stream ${mode === "story" ? "text-stone-700" : "text-zinc-400"
-                            }`}>
-                            <span className={mode === "story" ? "text-red-600 font-bold" : "text-cyan-400 font-bold"}>&lt;</span>
-                            {mode === "corporate" ? " Architecting Intelligence " : " Voice of Revolution "}
-                            <span className={mode === "story" ? "text-red-600 font-bold" : "text-cyan-400 font-bold"}>/&gt;</span>
+                        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-light tracking-widest uppercase data-stream text-zinc-400">
+                            <span className="text-cyan-400 font-bold">&lt;</span>
+                            {" Architecting Intelligence "}
+                            <span className="text-cyan-400 font-bold">/&gt;</span>
                         </p>
                     </div>
                 </div>
