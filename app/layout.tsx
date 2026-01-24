@@ -5,7 +5,6 @@ import { ModeProvider } from "@/components/context/mode-context";
 import Navbar from "@/components/layout/navbar";
 import SmoothScroll from "@/components/layout/smooth-scroll";
 import Schema from "@/components/schema";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -112,6 +111,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-G6KS54SZ1Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-G6KS54SZ1Y');
+          `}
+        </Script>
         <ModeProvider>
           <Schema />
           <SmoothScroll />
@@ -119,8 +131,6 @@ export default function RootLayout({
           <main className="relative z-10 min-h-screen">
             {children}
           </main>
-
-          <GoogleAnalytics gaId="G-G6KS54SZ1Y" />
 
           {/* Microsoft Clarity Script */}
           <Script id="clarity-script" strategy="afterInteractive">
