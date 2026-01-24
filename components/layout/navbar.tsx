@@ -58,7 +58,7 @@ export default function Navbar() {
                 <div className="relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center justify-center gap-2">
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
                         <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "story" ? "opacity-50" : "opacity-100 font-bold")}>
-                            Brain
+                            Logic
                         </span>
                         <button
                             onClick={toggleMode}
@@ -73,7 +73,7 @@ export default function Navbar() {
                             />
                         </button>
                         <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "corporate" ? "opacity-50" : "opacity-100 font-bold")}>
-                            Heart
+                            Legacy
                         </span>
                     </div>
 
