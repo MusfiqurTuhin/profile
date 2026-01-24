@@ -65,7 +65,7 @@ export const storyData: StorySection[] = [
             { src: "/images/story/blood5.jpg", type: "image", alt: "Blood Donation" },
             { src: "/images/story/blood7.jpg", type: "image", alt: "Blood Donation" },
             { src: "/images/story/blood9.jpg", type: "image", alt: "Blood Donation" },
-            { src: "/images/story/eye donor.jpg", type: "image", alt: "Posthumous Eye Donor" },
+
         ]
     },
     {
