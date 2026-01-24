@@ -138,7 +138,8 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             <div className={cn(
-                "fixed inset-0 bg-black z-40 flex flex-col items-end justify-center gap-4 pr-8 transition-all duration-300 lg:hidden",
+                "fixed inset-0 z-40 flex flex-col items-end justify-center gap-4 pr-8 transition-all duration-300 lg:hidden",
+                mode === "corporate" ? "bg-black" : "bg-stone-50",
                 mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
                 {(mode === "corporate" ? corpLinks : storyLinks).map((link) => (
@@ -147,7 +148,7 @@ export default function Navbar() {
                         onClick={() => handleScroll(link.id)}
                         className={cn(
                             "text-sm uppercase tracking-widest font-bold",
-                            mode === "corporate" ? "text-white" : "text-stone-200"
+                            mode === "corporate" ? "text-white" : "text-stone-900"
                         )}
                     >
                         {link.label}
