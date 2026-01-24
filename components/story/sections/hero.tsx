@@ -58,7 +58,7 @@ export default function Hero() {
                     {/* Using the confirmed portrait path */}
                     <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white shadow-xl">
                         <Image
-                            src="/images/story/Md Musfiqur Rahman.jpg"
+                            src="/images/story/70977299.jpeg"
                             alt="Musfiqur Rahman"
                             fill
                             className="object-cover"

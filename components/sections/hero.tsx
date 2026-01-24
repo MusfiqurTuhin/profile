@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 import CyberGrid from "@/components/canvas/cyber-grid";
 import { useMode } from "@/components/context/mode-context";
 import { ArrowDown, Cpu, Activity, ShieldCheck, Terminal } from "lucide-react";
@@ -92,6 +93,18 @@ export default function Hero() {
                         <span className="hidden sm:inline">{mode === "story" ? "BANGLADESH" : "DHAKA"}</span>
                     </div>
                     <div className="hidden md:block">{mode === "story" ? "JULY_SPIRIT" : "SECURE_V4.2"}</div>
+                </div>
+
+                <div className="relative mb-8 group">
+                    <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-cyan-500/50 shadow-[0_0_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)] transition-shadow duration-500">
+                        <div className="absolute inset-0 bg-cyan-500/10 mix-blend-overlay z-10" />
+                        <Image
+                            src="/images/story/Md Musfiqur Rahman.jpg"
+                            alt="System Architect"
+                            fill
+                            className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                        />
+                    </div>
                 </div>
 
                 <div className="relative text-center md:text-left mix-blend-screen">
