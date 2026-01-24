@@ -32,8 +32,14 @@ export default function TravelMap() {
         "502760469_1110637697836924_5531822604082594632_n.jpg",
     ].map(filename => `/images/Travel/${filename}`);
 
-    // Generate random rotations for photos (between -3 and 3 degrees)
-    const rotations = travelPhotos.map(() => (Math.random() - 0.5) * 6);
+    // Generate random chaotic styles for photos
+    const chaoticStyles = travelPhotos.map(() => ({
+        rotation: (Math.random() - 0.5) * 12, // More extreme rotation: -6 to 6 deg (doubled)
+        xOffset: (Math.random() - 0.5) * 20, // Random X nudge: -10px to 10px
+        yOffset: (Math.random() - 0.5) * 40, // Random Y nudge: -20px to 20px
+        scale: 0.9 + Math.random() * 0.2, // Random scale: 0.9 to 1.1
+        zIndex: Math.floor(Math.random() * 10), // Random stacking order
+    }));
 
     return (
         <section className="min-h-screen w-full py-20 md:py-32 px-6 bg-white relative overflow-hidden">
@@ -159,37 +165,45 @@ export default function TravelMap() {
                         Field Evidence // {travelPhotos.length} Entries
                     </div>
 
-                    {/* Masonry Grid */}
-                    <div className="columns-1 sm:columns-2 gap-4 space-y-4">
-                        {travelPhotos.map((photo, index) => (
-                            <div
-                                key={index}
-                                className="break-inside-avoid group relative"
-                                style={{
-                                    transform: `rotate(${rotations[index]}deg)`,
-                                    transition: 'transform 0.3s ease'
-                                }}
-                            >
-                                {/* Tape Decoration */}
-                                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-6 bg-amber-100/60 border-t border-b border-amber-200/80 z-10 backdrop-blur-sm"></div>
+                    {/* Masonry Grid - 2 cols on mobile for chaotic look */}
+                    <div className="columns-2 gap-4 lg:gap-8 space-y-8 lg:space-y-8 px-2">
+                        {travelPhotos.map((photo, index) => {
+                            const style = chaoticStyles[index];
+                            return (
+                                <div
+                                    key={index}
+                                    className="break-inside-avoid group relative mb-8"
+                                    style={{
+                                        transform: `
+                                            rotate(${style.rotation}deg) 
+                                            translate(${style.xOffset}px, ${style.yOffset}px) 
+                                            scale(${style.scale})
+                                        `,
+                                        zIndex: style.zIndex,
+                                        transition: 'transform 0.4s ease-out'
+                                    }}
+                                >
+                                    {/* Tape Decoration */}
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 md:w-20 h-4 md:h-8 bg-amber-100/80 border-t border-b border-amber-200/50 z-20 shadow-sm rotate-[-2deg]"></div>
 
-                                {/* Photo */}
-                                <div className="relative">
-                                    <img
-                                        src={photo}
-                                        alt={`Travel memory ${index + 1}`}
-                                        className="w-full h-auto rounded shadow-lg grayscale group-hover:grayscale-0 transition-all duration-500 border-4 border-white"
-                                        style={{
-                                            filter: 'contrast(1.1) brightness(0.95)'
-                                        }}
-                                    />
-                                    {/* Entry Number */}
-                                    <div className="absolute bottom-2 right-2 font-mono text-xs text-white bg-black/50 px-2 py-1 rounded backdrop-blur-sm">
-                                        #{String(index + 1).padStart(2, '0')}
+                                    {/* Photo */}
+                                    <div className="relative hover:z-50 hover:scale-105 transition-all duration-300 ease-out shadow-md hover:shadow-2xl">
+                                        <img
+                                            src={photo}
+                                            alt={`Travel memory ${index + 1}`}
+                                            className="w-full h-auto rounded-sm bg-stone-100 p-1.5 md:p-2 border border-stone-200 shadow-sm"
+                                            style={{
+                                                filter: 'sepia(0.05) contrast(1.05) brightness(0.95)'
+                                            }}
+                                        />
+                                        {/* Entry Number */}
+                                        <div className="absolute bottom-3 right-3 font-mono text-[10px] text-stone-400 opacity-60">
+                                            #{String(index + 1).padStart(3, '0')}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
 
