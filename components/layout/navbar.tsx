@@ -36,7 +36,7 @@ export default function Navbar() {
 
     return (
         <nav className={cn(
-            "fixed top-0 left-0 w-full z-50 p-4 md:p-6 grid grid-cols-[1fr_auto_1fr] items-center transition-colors duration-300 backdrop-blur-md border-b-[0.5px]",
+            "fixed top-0 left-0 w-full z-50 p-4 md:p-6 flex justify-between items-center transition-colors duration-300 backdrop-blur-md border-b-[0.5px]",
             mode === "corporate"
                 ? "bg-black/50 text-white border-white/10"
                 : "bg-stone-50/60 text-stone-900 border-black/5"
@@ -51,32 +51,33 @@ export default function Navbar() {
                 </p>
             </div>
 
-            {/* Center: Toggle */}
-            <div className="pointer-events-auto flex flex-col items-center justify-center gap-2 z-50">
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
-                    <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "story" ? "opacity-50" : "opacity-100 font-bold")}>
-                        Brain
-                    </span>
-                    <button
-                        onClick={toggleMode}
-                        className="w-10 h-5 md:w-12 md:h-6 bg-white/20 rounded-full relative p-1 transition-colors hover:bg-white/30"
-                        aria-label="Toggle Mode"
-                    >
-                        <div
-                            className={cn(
-                                "w-3 h-3 md:w-4 md:h-4 rounded-full bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                                mode === "story" ? "translate-x-5 md:translate-x-6 bg-amber-400" : "translate-x-0 bg-sky-400"
-                            )}
-                        />
-                    </button>
-                    <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "corporate" ? "opacity-50" : "opacity-100 font-bold")}>
-                        Heart
-                    </span>
-                </div>
-            </div>
+            {/* Right Side: Toggle + Menu */}
+            <div className="pointer-events-auto z-50 flex items-center gap-3 md:gap-6">
 
-            {/* Right: Desktop Nav & Mobile Burger */}
-            <div className="pointer-events-auto z-50 flex items-center justify-end">
+                {/* Toggle: Relative on Mobile (Right), Absolute Center on Desktop */}
+                <div className="relative md:absolute md:left-1/2 md:-translate-x-1/2 flex flex-col items-center justify-center gap-2">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
+                        <span className={cn("text-[10px] md:text-xs transition-opacity hidden sm:inline", mode === "story" ? "opacity-50" : "opacity-100 font-bold")}>
+                            Brain
+                        </span>
+                        <button
+                            onClick={toggleMode}
+                            className="w-10 h-5 md:w-12 md:h-6 bg-white/20 rounded-full relative p-1 transition-colors hover:bg-white/30"
+                            aria-label="Toggle Mode"
+                        >
+                            <div
+                                className={cn(
+                                    "w-3 h-3 md:w-4 md:h-4 rounded-full bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                                    mode === "story" ? "translate-x-5 md:translate-x-6 bg-amber-400" : "translate-x-0 bg-sky-400"
+                                )}
+                            />
+                        </button>
+                        <span className={cn("text-[10px] md:text-xs transition-opacity hidden sm:inline", mode === "corporate" ? "opacity-50" : "opacity-100 font-bold")}>
+                            Heart
+                        </span>
+                    </div>
+                </div>
+
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-6">
                     {(mode === "corporate" ? corpLinks : storyLinks).map((link) => (
@@ -106,9 +107,6 @@ export default function Navbar() {
                     <div className={cn("w-6 h-0.5 transition-all bg-current", mobileMenuOpen && "-rotate-45 -translate-y-2")} />
                 </button>
             </div>
-
-            {/* Interaction Hint (Removed from flow, absolute positioning relative to nav container might be tricky in grid, removing for cleaner mobile view or keeping absolutely positioned relative to nav?) */}
-            {/* Keeping it simple for now, the hint was causing clutter. We can re-add if needed, but the 'always visible' nature makes it less necessary to 'tap to switch' hint constantly. */}
 
             {/* Mobile Menu Overlay */}
             <div className={cn(
