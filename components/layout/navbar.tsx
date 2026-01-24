@@ -56,23 +56,39 @@ export default function Navbar() {
 
                 {/* Toggle: Relative on Mobile/Tablet (Right), Absolute Center on Desktop */}
                 <div className="relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center justify-center gap-2">
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
-                        <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "story" ? "opacity-50" : "opacity-100 font-bold")}>
+                    <div className={cn(
+                        "flex items-center gap-1 p-1 rounded-full border backdrop-blur-md transition-colors duration-300",
+                        mode === "corporate" ? "bg-zinc-900/50 border-white/10" : "bg-white/50 border-black/5"
+                    )}>
+                        <span
+                            onClick={() => mode !== "corporate" && toggleMode()}
+                            className={cn(
+                                "text-[10px] md:text-xs px-3 py-1.5 rounded-full transition-all duration-300 font-bold cursor-pointer select-none",
+                                mode === "corporate"
+                                    ? "bg-white text-black shadow-sm"
+                                    : "text-stone-500 hover:text-black"
+                            )}
+                        >
                             Logic
                         </span>
+
                         <button
                             onClick={toggleMode}
-                            className="w-10 h-5 lg:w-12 lg:h-6 bg-white/20 rounded-full relative p-1 transition-colors hover:bg-white/30"
+                            className="w-8 h-4 bg-transparent relative outline-none focus:outline-none"
                             aria-label="Toggle Mode"
                         >
-                            <div
-                                className={cn(
-                                    "w-3 h-3 md:w-4 md:h-4 rounded-full bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                                    mode === "story" ? "translate-x-5 lg:translate-x-6 bg-amber-400" : "translate-x-0 bg-sky-400"
-                                )}
-                            />
+                            {/* Simplified Toggle Switch - mostly decorative now that labels are buttons */}
                         </button>
-                        <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "corporate" ? "opacity-50" : "opacity-100 font-bold")}>
+
+                        <span
+                            onClick={() => mode !== "story" && toggleMode()}
+                            className={cn(
+                                "text-[10px] md:text-xs px-3 py-1.5 rounded-full transition-all duration-300 font-bold cursor-pointer select-none",
+                                mode === "story"
+                                    ? "bg-black text-white shadow-sm"
+                                    : "text-zinc-500 hover:text-white"
+                            )}
+                        >
                             Legacy
                         </span>
                     </div>
