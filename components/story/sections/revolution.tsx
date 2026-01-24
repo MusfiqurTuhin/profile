@@ -185,13 +185,17 @@ export default function Revolution() {
                                     className="h-full w-auto object-contain bg-black"
                                 />
                             ) : (
-                                /* Image: remove explicit aspect ratio wrapper to allow original size */
-                                <img
+                                /* Image: Optimized with Next.js Image */
+                                <Image
                                     src={media.src}
                                     alt={media.alt}
+                                    width={800}
+                                    height={600}
                                     className="h-full w-auto object-contain block"
+                                    sizes="(max-width: 768px) 80vw, 400px"
+                                    quality={80}
                                     loading="lazy"
-                                    onLoad={() => ScrollTrigger.refresh()} // Refresh scroll length when image loads
+                                    onLoad={() => ScrollTrigger.refresh()}
                                 />
                             )}
 

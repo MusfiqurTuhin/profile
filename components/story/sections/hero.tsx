@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Hero() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -107,9 +108,12 @@ export default function Hero() {
                 {/* The Image Container */}
                 <div className="relative bg-black shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
                     {/* Your Image with Black BG */}
-                    <img
+                    <Image
                         src="/images/story/70977299.jpeg"
                         alt="Musfiqur Tuhin"
+                        width={400} // Approximate based on CSS width
+                        height={500}
+                        priority={true} // Priority loading as requested
                         className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                     />
 

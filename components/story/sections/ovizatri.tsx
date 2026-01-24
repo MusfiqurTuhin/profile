@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { storyData } from "@/lib/story-data";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Ovizatri() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -115,11 +116,15 @@ export default function Ovizatri() {
                                         key={`set-${setIndex}-img-${i}`}
                                         className="relative w-full bg-stone-200 overflow-hidden rounded-sm shadow-md border border-white shrink-0"
                                     >
-                                        <img
+                                        <Image
                                             src={media.src}
                                             alt={media.alt}
+                                            width={800}
+                                            height={600}
                                             className="w-full h-auto block"
-                                            loading="eager"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            quality={80}
+                                            loading="eager" // Keep eager as it is above/near fold or critical marquee
                                             onLoad={() => ScrollTrigger.refresh()}
                                         />
                                     </div>
