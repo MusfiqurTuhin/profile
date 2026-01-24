@@ -78,8 +78,8 @@ export default function Navbar() {
                     </div>
 
                     {/* Interaction Hint - Restored */}
-                    <div className="absolute -bottom-8 animate-bounce whitespace-nowrap hidden md:block">
-                        {/* Hidden on mobile to avoid overlapping content, but labels are back */}
+                    <div className="absolute -bottom-8 animate-bounce whitespace-nowrap block">
+                        {/* Visible on mobile as requested */}
                         <div className="bg-story-red/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg relative">
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full border-4 border-transparent border-b-story-red/90" />
                             TAP TO SWITCH OR SCROLL DOWN
