@@ -34,7 +34,7 @@ export default function ResearchLab() {
             <div className="max-w-7xl mx-auto mb-12">
                 <SectionHeader
                     title="RESEARCH LABORATORY"
-                    subtitle="Published works in Computer Vision, NLP, and Machine Learning. Peer-reviewed and indexed in IEEE Xplore, Springer Nature."
+                    subtitle="Authored 7 peer-reviewed papers in Computer Vision, NLP, and Machine Learning. All works are Scopus-indexed (IEEE Xplore & Springer Nature) and have been accepted and presented at international conferences, with recent contributions awaiting final online release."
                 />
             </div>
 
