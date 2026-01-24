@@ -5,6 +5,8 @@ import { ModeProvider } from "@/components/context/mode-context";
 import Navbar from "@/components/layout/navbar";
 import SmoothScroll from "@/components/layout/smooth-scroll";
 import Schema from "@/components/schema";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -117,6 +119,19 @@ export default function RootLayout({
           <main className="relative z-10 min-h-screen">
             {children}
           </main>
+
+          <GoogleAnalytics gaId="G-G6KS54SZ1Y" />
+
+          {/* Microsoft Clarity Script */}
+          <Script id="clarity-script" strategy="afterInteractive">
+            {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "v6navnndxn");
+          `}
+          </Script>
         </ModeProvider>
       </body>
     </html>
