@@ -1,89 +1,67 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import Image from "next/image";
-
 export default function Hero() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const portraitRef = useRef<HTMLDivElement>(null);
-    const textRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            // Parallax effect on mouse move
-            const handleMouseMove = (e: MouseEvent) => {
-                const { clientX, clientY } = e;
-                const x = (clientX / window.innerWidth - 0.5) * 20;
-                const y = (clientY / window.innerHeight - 0.5) * 20;
-
-                gsap.to(portraitRef.current, {
-                    x: x,
-                    y: y,
-                    duration: 1,
-                    ease: "power2.out"
-                });
-
-                gsap.to(textRef.current, {
-                    x: -x * 1.5,
-                    y: -y * 1.5,
-                    duration: 1,
-                    ease: "power2.out"
-                });
-            };
-
-            window.addEventListener("mousemove", handleMouseMove);
-            return () => window.removeEventListener("mousemove", handleMouseMove);
-        }, containerRef);
-
-        return () => ctx.revert();
-    }, []);
-
     return (
-        <section ref={containerRef} className="h-screen w-full flex items-center justify-center relative overflow-hidden pt-24">
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#F5F5F7] to-[#E5E5E5] z-0" />
+        <section className="relative h-screen w-full bg-[#F5F5F7] text-[#1A1A1A] overflow-hidden flex flex-col justify-between py-6 md:py-0">
 
-            {/* Glass Rings (CSS 3D) */}
-            <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none opacity-40">
-                <div className="w-[600px] h-[600px] rounded-full border-[1px] border-black/10 absolute animate-spin-slow" style={{ animationDuration: '30s' }} />
-                <div className="w-[500px] h-[500px] rounded-full border-[1px] border-story-red/20 absolute animate-reverse-spin" style={{ animationDuration: '25s' }} />
-                <div className="w-[700px] h-[700px] rounded-full border-[1px] border-black/5 absolute animate-spin-slow" style={{ animationDuration: '40s' }} />
+            {/* --- GRID BACKGROUND --- */}
+            <div className="absolute inset-0 z-0 opacity-[0.03]"
+                style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
             </div>
 
-            <div className="z-10 relative flex flex-col items-center text-center">
-                {/* PORTRAIT */}
-                <div ref={portraitRef} className="relative w-64 h-64 md:w-80 md:h-80 mb-12">
-                    {/* Blur removed for clarity */}
-                    {/* Using the confirmed portrait path */}
-                    <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white shadow-xl">
-                        <Image
-                            src="/images/story/70977299.jpeg"
-                            alt="Musfiqur Rahman"
-                            fill
-                            className="object-cover"
-                            priority
-                        />
-                    </div>
-
-                    {/* Pulse Ring */}
-                    <div className="absolute -inset-4 rounded-full border border-story-red/30 animate-ping opacity-20 z-0" />
-                </div>
-
-                {/* TEXT */}
-                <div ref={textRef} className="relative z-30 mix-blend-difference text-story-charcoal">
-                    <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-4">
-                        ENGINEER.<br />
-                        <span className="text-story-red">ACTIVIST.</span><br />
-                        ARTIST.
-                    </h1>
-                    <div className="flex items-center justify-center gap-4 mt-8">
-                        <div className="h-[1px] w-12 bg-story-red" />
-                        <p className="font-mono text-sm md:text-base tracking-[0.3em] font-bold text-story-red">BORN 2002</p>
-                        <div className="h-[1px] w-12 bg-story-red" />
-                    </div>
-                </div>
+            {/* --- TOP: THINKER --- */}
+            <div className="relative z-10 flex justify-center items-start h-[25vh] md:h-[30vh]">
+                <h1 className="text-[18vw] md:text-[15vw] font-black tracking-tighter leading-none text-[#1A1A1A] mix-blend-darken select-none">
+                    THINKER.
+                </h1>
             </div>
+
+            {/* --- CENTER: THE MONOLITH --- */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[280px] md:w-[400px] group">
+
+                {/* The Image Container */}
+                <div className="relative bg-black shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                    {/* Your Image with Black BG */}
+                    <img
+                        src="/images/story/Md Musfiqur Rahman.jpg"
+                        alt="Musfiqur Tuhin"
+                        className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                    />
+
+                    {/* Tech Detail: Corner Label */}
+                    <div className="absolute top-0 left-0 bg-white/10 backdrop-blur-md px-3 py-1">
+                        <span className="font-mono text-[10px] text-white tracking-widest uppercase">
+                            Archive_ID: 2002
+                        </span>
+                    </div>
+                </div>
+
+                {/* --- THE MAVERICK STAMP --- */}
+                {/* This overlaps the image and background */}
+                <div className="absolute -bottom-8 md:-bottom-10 -right-8 md:-right-20 z-30">
+                    <h2 className="text-5xl md:text-8xl font-serif italic text-[#D60000] tracking-tighter leading-none mix-blend-normal transform -rotate-6">
+                        Maverick.
+                    </h2>
+                    {/* Decorative Red Line */}
+                    <div className="h-2 w-full bg-[#D60000] mt-2 transform -skew-x-12"></div>
+                </div>
+
+            </div>
+
+            {/* --- BOTTOM: ORGANIZER --- */}
+            <div className="relative z-10 flex justify-center items-end h-[25vh] md:h-[30vh]">
+                <h1 className="text-[18vw] md:text-[15vw] font-black tracking-tighter leading-none text-[#1A1A1A] mix-blend-darken select-none">
+                    ORGANIZER.
+                </h1>
+            </div>
+
+            {/* --- FOOTER: DATA STREAM --- */}
+            <div className="absolute bottom-4 md:bottom-6 w-full flex justify-between px-4 md:px-12 font-mono text-[9px] md:text-xs text-gray-400 z-40 uppercase tracking-widest">
+                <span>[ Loc: Dhaka, BD ]</span>
+                <span className="hidden md:block">Logic & Legacy System</span>
+                <span>[ Est. 2002 ]</span>
+            </div>
+
         </section>
     );
 }
