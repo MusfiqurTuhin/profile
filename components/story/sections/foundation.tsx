@@ -66,7 +66,6 @@ export default function Foundation() {
         <section id="foundation" ref={sectionRef} className="min-h-screen w-full py-32 px-6 flex flex-col items-center justify-center relative overflow-hidden bg-[#F5F5F7]">
 
             <div className="text-center mb-24 relative z-10 pointer-events-none">
-                <span className="text-story-red font-mono text-sm tracking-widest uppercase mb-4 block">01. THE FOUNDATION</span>
                 <h2 className="text-5xl md:text-7xl font-black text-story-charcoal leading-none tracking-tight">
                     DISCIPLINE &<br />DUTY
                 </h2>
