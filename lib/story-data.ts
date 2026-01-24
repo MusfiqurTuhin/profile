@@ -8,7 +8,7 @@ export type StoryMedia = {
 export type StorySection = {
     id: string;
     title: string;
-    age: number;
+    age: string | number;
     yearRange: string;
     theme: string;
     description: string;
@@ -50,8 +50,8 @@ export const storyData: StorySection[] = [
     {
         id: "lifeline",
         title: "The Lifeline",
-        age: 17,
-        yearRange: "2017 — Present",
+        age: "17 — 26",
+        yearRange: "2017 — 2026",
         theme: "Blood & Vision",
         description: "Volunteering since 2017. A network of life across Habiganj, Sylhet, and Dhaka.",
         stats: [

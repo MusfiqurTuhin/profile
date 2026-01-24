@@ -56,7 +56,7 @@ export default function Lifeline() {
 
                 {/* Stats */}
                 <div className="text-story-charcoal">
-                    <span className="text-story-red font-mono text-sm tracking-widest uppercase mb-4 block">03. THE LIFELINE</span>
+
                     <h2 className="text-6xl md:text-9xl font-black leading-none mb-8 text-story-red">
                         {data.stats?.[0]?.value}<br />
                         <span className="text-4xl md:text-6xl text-story-charcoal tracking-tight">BAGS MANAGED</span>
