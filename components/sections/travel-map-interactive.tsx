@@ -205,4 +205,102 @@ export default function TravelMapInteractive() {
                     </div>
                 </div>
 
+                {/* RIGHT: Chaotic Round Photo Gallery */}
+                <div className="space-y-6">
+                    <div className="font-mono text-xs text-stone-500 uppercase tracking-widest">
+                        Field Evidence // 37 Entries
+                    </div>
+
+                    {/* Chaotic Scattered Photo Grid */}
+                    <div className="relative min-h-screen">
+                        {[
+                            "468526371_17994753080714591_832146755417126345_n.jpg",
+                            "480474287_1022664116634283_6861207374996785542_n.jpg",
+                            "480475216_1021942273373134_5359121277222586579_n.jpg",
+                            "481274784_18005609453714591_6425983771888587927_n.jpeg",
+                            "488725977_1058223169745044_9109197646216975619_n.jpg",
+                            "490275841_1064930105741017_4138701779973042969_n.jpg",
+                            "491355347_1077928621107832_1455165775556501128_n.jpg",
+                            "491999623_1077928627774498_6600704608818726482_n.jpg",
+                            "492088254_1077928811107813_3262497670119431978_n.jpg",
+                            "492101807_1078334367733924_1481840040689288507_n.jpg",
+                            "492331246_1078337644400263_1333415051765423674_n.jpg",
+                            "492336331_1078336591067035_8219196515500960976_n.jpg",
+                            "492414530_1077936207773740_215282736116850438_n.jpg",
+                            "492501480_1078334227733938_817954589743068738_n.jpg",
+                            "492554455_1078334331067261_3711685723591352569_n.jpg",
+                            "493315558_1078040754429952_6862375236586650486_n.jpg",
+                            "493494265_1078338271066867_4899950149779093717_n.jpg",
+                            "502492348_1110321691201858_4845616588514134424_n.jpg",
+                            "502571387_1115139980720029_8130666282325262220_n.jpg",
+                            "502760469_1110637697836924_5531822604082594632_n.jpg",
+                            "464494819_17959773298714591_2064851088078856476_n.jpg",
+                            "480485222_1021939803373381_6073738098932742992_n.jpg",
+                            "480568331_1022664209967607_4997052399906836843_n.jpg",
+                            "481276256_18005609456714591_8636889374695685434_n.jpeg",
+                            "488743099_1058223206411707_4699056134568614260_n.jpg",
+                            "490361109_1064930145741013_4447636078048676503_n.jpg",
+                            "491373847_1077928647774496_6384503912506486892_n.jpg",
+                            "492000255_1077928664441161_5635458367127515682_n.jpg",
+                            "492088318_1077928817774479_8959129699716159165_n.jpg",
+                            "492110007_1078334604400567_6559393026868764082_n.jpg",
+                            "492333246_1078337681067026_2530054740682076324_n.jpg",
+                            "492369531_1078336631067131_890618885656859913_n.jpg",
+                            "492470630_1077936244440836_4318023301935168007_n.jpg",
+                            "492526680_1078334281067272_8726562999134088584_n.jpg",
+                            "492597055_1078334374400596_3068982890738472319_n.jpg",
+                            "493413058_1078040794429954_8025523881914595405_n.jpg",
+                            "502471148_1110321734535187_6990333730074405046_n.jpg",
+                        ].map((filename, idx) => {
+                            // Create random chaotic positioning
+                            const randomRotation = (Math.random() - 0.5) * 20; // -10 to +10 degrees
+                            const randomScale = 0.8 + Math.random() * 0.4; // 0.8 to 1.2
+                            const isLarge = idx % 5 === 0; // Every 5th photo is larger
+
+                            return (
+                                <div
+                                    key={filename}
+                                    className="absolute group cursor-pointer"
+                                    style={{
+                                        top: `${(idx % 7) * 14}%`,
+                                        left: `${(idx % 5) * 20}%`,
+                                        transform: `rotate(${randomRotation}deg) scale(${randomScale})`,
+                                        transition: "all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                                        zIndex: 1,
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.zIndex = "50";
+                                        e.currentTarget.style.transform = `rotate(0deg) scale(1.3)`;
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.zIndex = "1";
+                                        e.currentTarget.style.transform = `rotate(${randomRotation}deg) scale(${randomScale})`;
+                                    }}
+                                >
+                                    {/* Polaroid Frame */}
+                                    <div className="bg-white p-2 shadow-2xl rounded-lg">
+                                        {/* Round Image Container */}
+                                        <div
+                                            className={`${isLarge ? "w-48 h-48" : "w-32 h-32"
+                                                } rounded-full overflow-hidden border-4 border-white shadow-inner bg-stone-100`}
+                                        >
+                                            <img
+                                                src={`/images/Travel/${filename}`}
+                                                alt={`Travel ${idx + 1}`}
+                                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                                            />
+                                        </div>
+                                        {/* Caption */}
+                                        <div className="mt-2 text-center font-mono text-[8px] text-stone-400">
+                                            #{String(idx + 1).padStart(2, "0")}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }
