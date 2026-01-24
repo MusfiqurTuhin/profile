@@ -172,8 +172,8 @@ export default function Revolution() {
                             {media.type === "video" ? (
                                 <SmartVideo
                                     src={media.src}
-                                    poster="/images/video-placeholder.jpg" // TODO: Add real thumbnails for videos
-                                    className="h-full w-auto aspect-[9/16] bg-black" // Assuming vertical video or adjust aspect
+                                    // poster (Optional): Add real thumbnail URL here when available
+                                    className="h-full w-auto aspect-[9/16] bg-black"
                                 />
                             ) : (
                                 /* Image: Optimized with Next.js Image */
