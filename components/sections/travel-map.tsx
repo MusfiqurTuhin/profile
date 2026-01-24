@@ -59,46 +59,93 @@ export default function TravelMap() {
                         onMouseLeave={() => setIsMapHovered(false)}
                     >
                         {/* Blueprint Header */}
-                        <div className="absolute top-4 left-4 font-mono text-xs text-stone-500 uppercase tracking-widest">
-                            Field Map // Archive 2024
+                        <div className="absolute top-4 left-4 right-4 flex justify-between font-mono text-xs text-stone-500 uppercase tracking-widest">
+                            <span>Field Map // Archive 2024</span>
+                            <span className={`transition-colors duration-300 ${isMapHovered ? 'text-red-600' : ''}`}>
+                                {isMapHovered ? '● ACTIVE' : '○ STANDBY'}
+                            </span>
                         </div>
 
-                        {/* Simplified Vector Map Placeholder */}
-                        <div className="aspect-[3/4] relative bg-stone-50 rounded border border-stone-200 flex items-center justify-center mt-8">
-                            <div className="text-center space-y-4">
-                                <div className={`text-6xl font-black transition-colors duration-300 ${isMapHovered ? 'text-red-600' : 'text-stone-400'
-                                    }`}>
-                                    🗺️
+                        {/* Actual Bangladesh SVG Map */}
+                        <div className="mt-8 relative">
+                            <div className="relative bg-stone-50 rounded border-2 border-stone-300 p-4 overflow-hidden">
+                                <img
+                                    src="/images/story/BD_Map_admin.svg"
+                                    alt="Bangladesh Administrative Map"
+                                    className={`w-full h-auto transition-all duration-500 ${isMapHovered ? 'opacity-100' : 'opacity-80'
+                                        }`}
+                                    style={{
+                                        filter: isMapHovered
+                                            ? 'contrast(1.2) saturate(1.3) hue-rotate(350deg)'
+                                            : 'grayscale(0.3) contrast(1.1)',
+                                        maxHeight: '60vh'
+                                    }}
+                                />
+
+                                {/* Overlay Stats */}
+                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm border border-stone-300 rounded-lg p-3 shadow-md">
+                                    <div className="text-right space-y-1">
+                                        <div className="text-3xl font-black text-red-600">{visitedCount}</div>
+                                        <div className="text-xs font-mono text-stone-500">DISTRICTS</div>
+                                        <div className="text-xs text-stone-400 border-t border-stone-200 pt-1">
+                                            {visitedPercentage}% explored
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="font-mono text-sm text-stone-500">
-                                    <div className="text-2xl font-bold text-stone-900">{visitedCount}/64</div>
-                                    <div>Districts Explored</div>
-                                    <div className="mt-2 text-xs text-stone-400">{visitedPercentage}% Coverage</div>
+
+                                {/* Legend */}
+                                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm border border-stone-300 rounded-lg px-3 py-2">
+                                    <div className="flex items-center gap-3 text-xs font-mono">
+                                        <div className="flex items-center gap-1.5">
+                                            <div className={`w-3 h-3 rounded-sm transition-colors duration-300 ${isMapHovered ? 'bg-red-600' : 'bg-stone-400'
+                                                }`}></div>
+                                            <span className="text-stone-600">Visited</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5">
+                                            <div className="w-3 h-3 rounded-sm bg-stone-200"></div>
+                                            <span className="text-stone-600">Unvisited</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className={`text-xs transition-opacity duration-300 ${isMapHovered ? 'opacity-100 text-red-600' : 'opacity-0'
-                                    }`}>
-                                    Visited regions highlighted
-                                </div>
+                            </div>
+                        </div>
+
+                        {/* Geographic Stats */}
+                        <div className="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div className="bg-stone-50 border border-stone-200 rounded-lg p-3">
+                                <div className="text-2xl font-bold text-stone-900">{travelData.stats.visitedDivisions}</div>
+                                <div className="text-xs font-mono text-stone-500 uppercase">Divisions</div>
+                            </div>
+                            <div className="bg-stone-50 border border-stone-200 rounded-lg p-3">
+                                <div className="text-2xl font-bold text-stone-900">{visitedCount}</div>
+                                <div className="text-xs font-mono text-stone-500 uppercase">Districts</div>
+                            </div>
+                            <div className="bg-stone-50 border border-stone-200 rounded-lg p-3">
+                                <div className="text-2xl font-bold text-red-600">{visitedPercentage}%</div>
+                                <div className="text-xs font-mono text-stone-500 uppercase">Coverage</div>
                             </div>
                         </div>
 
                         {/* Blueprint Footer */}
-                        <div className="mt-4 grid grid-cols-2 gap-4 text-xs font-mono text-stone-500">
+                        <div className="mt-4 flex justify-between text-xs font-mono text-stone-400">
                             <div>
-                                <span className="text-stone-400">DIVISIONS:</span> {travelData.stats.visitedDivisions}/8
+                                <span className="text-stone-500">SCALE:</span> 1:2,000,000
                             </div>
-                            <div className="text-right">
-                                <span className="text-stone-400">STATUS:</span> ACTIVE
+                            <div>
+                                <span className="text-stone-500">METHOD:</span> Field Survey
                             </div>
                         </div>
                     </div>
 
                     {/* District List */}
                     <div className="mt-6 bg-stone-50 border border-stone-200 rounded-lg p-6">
-                        <h3 className="font-mono text-xs text-stone-500 uppercase tracking-widest mb-3">Logged Districts</h3>
+                        <h3 className="font-mono text-xs text-stone-500 uppercase tracking-widest mb-3 flex items-center justify-between">
+                            <span>Logged Districts</span>
+                            <span className="text-red-600">{visitedCount} entries</span>
+                        </h3>
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                             {travelData.visitedDistricts.map((district) => (
-                                <div key={district} className="font-mono text-stone-700 truncate">
+                                <div key={district} className="font-mono text-stone-700 bg-white border border-stone-200 px-2 py-1 rounded truncate hover:bg-red-50 hover:border-red-200 transition-colors">
                                     • {district}
                                 </div>
                             ))}
