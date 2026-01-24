@@ -1,7 +1,49 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // 1. Image Optimization
+  images: {
+    formats: ['image/avif', 'image/webp'], // AVIF is 20% smaller than WebP
+    minimumCacheTTL: 60, // Cache optimized images for 60 seconds on edge
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**', // Allow external images if you use them
+      },
+    ],
+  },
+
+  // 2. Compiler Optimization
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production', // Remove console.logs to save bytes
+  },
+
+  // 3. Cache Headers
+  async headers() {
+    return [
+      {
+        source: '/:all*(svg|jpg|png)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // Cache assets for 1 year
+          },
+        ],
+      },
+      {
+        source: '/_next/image(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=180, s-maxage=180, stale-while-revalidate=180',
+          },
+        ],
+      },
+    ];
+  },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

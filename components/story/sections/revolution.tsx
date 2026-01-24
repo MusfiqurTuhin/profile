@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import SmartVideo from "@/components/smart-video";
 import { storyData, StoryMedia } from "@/lib/story-data";
 import { Play, X, Maximize2 } from "lucide-react";
 import { createPortal } from "react-dom";
@@ -169,20 +170,10 @@ export default function Revolution() {
                         >
                             {/* Media Source - Constrained by Height, Width Flows Naturally */}
                             {media.type === "video" ? (
-                                <video
+                                <SmartVideo
                                     src={media.src}
-                                    playsInline loop
-                                    preload="metadata"
-                                    onMouseOver={(e) => {
-                                        e.currentTarget.muted = false;
-                                        e.currentTarget.play();
-                                    }}
-                                    onMouseOut={(e) => {
-                                        e.currentTarget.pause();
-                                        e.currentTarget.currentTime = 0;
-                                        e.currentTarget.muted = true;
-                                    }}
-                                    className="h-full w-auto object-contain bg-black"
+                                    poster="/images/video-placeholder.jpg" // TODO: Add real thumbnails for videos
+                                    className="h-full w-auto aspect-[9/16] bg-black" // Assuming vertical video or adjust aspect
                                 />
                             ) : (
                                 /* Image: Optimized with Next.js Image */
