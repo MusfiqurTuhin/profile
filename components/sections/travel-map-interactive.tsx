@@ -109,6 +109,10 @@ export default function TravelMapInteractive() {
                             <MapContainer
                                 center={[23.8103, 90.4125]}
                                 zoom={7}
+                                scrollWheelZoom={false}
+                                doubleClickZoom={false}
+                                zoomControl={false}
+                                dragging={true}
                                 style={{ height: "100%", width: "100%" }}
                                 className="z-0"
                             >
