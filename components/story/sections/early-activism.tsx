@@ -156,9 +156,7 @@ export default function EarlyActivism() {
                                                 className="w-full h-auto object-contain block hover:scale-105 transition-transform duration-700"
                                             />
                                         </div>
-                                        <div className="hidden lg:block text-zinc-600 font-serif italic text-sm leading-relaxed text-right">
-                                            "{film.role} for {film.org}"
-                                        </div>
+
                                     </div>
 
                                     {/* Right: Videos & Gallery */}
@@ -249,9 +247,7 @@ export default function EarlyActivism() {
                                     ))}
                                 </div>
 
-                                <div className="pt-2 border-t border-stone-200 text-[10px] font-mono uppercase text-center text-stone-400">
-                                    Fig. {i + 1} — Archival Evidence
-                                </div>
+
                             </div>
                         ))}
 
