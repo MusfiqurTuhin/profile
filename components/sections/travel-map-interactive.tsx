@@ -203,37 +203,71 @@ export default function TravelMapInteractive() {
                             </div>
                         </div>
                     </div>
-
-                    {/* District List */}
-                    <div className="mt-6 bg-stone-50 border border-stone-200 rounded-lg p-6">
-                        <h3 className="font-mono text-xs text-stone-500 uppercase tracking-widest mb-3 flex items-center justify-between">
-                            <span>Logged Districts</span>
-                            <span className="text-red-600">{visitedCount} entries</span>
-                        </h3>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
-                            {travelData.visitedDistricts.map((district) => (
-                                <button
-                                    key={district}
-                                    onClick={() => setSelectedDistrict(district)}
-                                    className={`font-mono text-left bg-white border px-2 py-1 rounded truncate transition-colors ${selectedDistrict === district
-                                        ? 'border-red-600 bg-red-50 text-red-900'
-                                        : 'border-stone-200 text-stone-700 hover:bg-red-50 hover:border-red-200'
-                                        }`}
-                                >
-                                    • {district}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
                 </div>
 
-                {/* RIGHT: Photo Gallery (kept from before) */}
+                {/* RIGHT: Photo Gallery */}
                 <div className="space-y-6">
                     <div className="font-mono text-xs text-stone-500 uppercase tracking-widest">
                         Field Evidence // 20 Entries
                     </div>
-                    <div className="text-stone-600 text-sm">
-                        Interactive map shows all {travelData.totalDistricts} districts. Click or hover over markers to explore.
+
+                    {/* Masonry Photo Gallery */}
+                    <div className="grid grid-cols-2 gap-4">
+                        {[
+                            "Travel/Travel (1).jpg",
+                            "Travel/Travel (2).jpg",
+                            "Travel/Travel (3).jpg",
+                            "Travel/Travel (4).jpg",
+                            "Travel/Travel (5).jpg",
+                            "Travel/Travel (6).jpg",
+                            "Travel/Travel (7).jpg",
+                            "Travel/Travel (8).jpg",
+                            "Travel/Travel (9).jpg",
+                            "Travel/Travel (10).jpg",
+                            "Travel/Travel (11).jpg",
+                            "Travel/Travel (12).jpg",
+                            "Travel/Travel (13).jpg",
+                            "Travel/Travel (14).jpg",
+                            "Travel/Travel (15).jpg",
+                            "Travel/Travel (16).jpg",
+                            "Travel/Travel (17).jpg",
+                            "Travel/Travel (18).jpg",
+                            "Travel/Travel (19).jpg",
+                            "Travel/Travel (20).jpg",
+                        ].map((photo, idx) => {
+                            const rotation = [
+                                "rotate-[-1deg]",
+                                "rotate-[0.5deg]",
+                                "rotate-[-0.5deg]",
+                                "rotate-[1deg]",
+                            ][idx % 4];
+
+                            return (
+                                <div
+                                    key={photo}
+                                    className={`relative group ${rotation} transition-all duration-300 hover:scale-105 hover:rotate-0 hover:z-10`}
+                                >
+                                    {/* Sticky Tape Decoration */}
+                                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-6 bg-amber-100/60 rotate-[-2deg] z-10 border border-amber-200/40"></div>
+
+                                    {/* Photo Frame */}
+                                    <div className="bg-white border-2 border-stone-300 p-2 shadow-md">
+                                        <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+                                            <img
+                                                src={`/images/${photo}`}
+                                                alt={`Travel memory ${idx + 1}`}
+                                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Caption */}
+                                    <div className="mt-2 text-center font-mono text-[10px] text-stone-400">
+                                        #{String(idx + 1).padStart(3, "0")}
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
