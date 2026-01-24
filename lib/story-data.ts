@@ -196,16 +196,8 @@ export const storyData: StorySection[] = [
             { label: "July Uprising", value: "Actively participated in and led student mobilization during the July Uprising, contributing to organization, coordination, and on-ground leadership." }
         ],
         media: [
-            // VIDEOS (9 Items)
-            { src: "/images/story/july1.mp4", type: "video", alt: "July Revolution Main" },
             { src: "/images/story/july.mp4", type: "video", alt: "July Revolution" },
-            { src: "/images/story/julyyyy.mp4", type: "video", alt: "July Protest" },
-            { src: "/images/story/julyyyyyy.mp4", type: "video", alt: "July Protest Large" },
-            { src: "/images/story/post july university movemeny.mp4", type: "video", alt: "University Movement" },
             { src: "/images/story/post jullly.mp4", type: "video", alt: "Post July" },
-            { src: "/images/story/post julllyy.mp4", type: "video", alt: "Post July" },
-            { src: "/images/story/post july.mp4", type: "video", alt: "Post July" },
-            { src: "/images/story/post julyyy.mp4", type: "video", alt: "Post July" },
 
             // IMAGES (12 Items)
             { src: "/images/story/july 6.jpg", type: "image", alt: "July Protest" },
