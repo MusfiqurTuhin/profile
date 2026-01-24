@@ -80,14 +80,14 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
                     }),
                 });
 
-                // Ovizatri
+                // Ovizatri (Travel Section - Hide Age/Year)
                 ScrollTrigger.create({
                     trigger: "#ovizatri",
                     start: "top center",
                     onEnter: () => setGameState({
                         age: ovizatri?.age || "14-18",
                         year: ovizatri?.yearRange || "2016-2020",
-                        visible: true
+                        visible: false // Hide age/year for travel section
                     }),
                     onLeaveBack: () => setGameState({
                         age: renaissance?.age || "18-22",
