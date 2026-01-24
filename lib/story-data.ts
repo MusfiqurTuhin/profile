@@ -21,10 +21,10 @@ export const storyData: StorySection[] = [
     {
         id: "foundation",
         title: "The Foundation",
-        age: 13,
+        age: 11,
         yearRange: "2013 — 2015",
         theme: "Discipline & Duty",
-        description: "At 13, I didn't just participate. I founded. Roots in service and discipline through Scouts and social organizations.",
+        description: "At 11, I didn't just participate. I founded. Roots in service and discipline through Scouts and social organizations.",
         media: [
             { src: "/images/story/scout.jpg", type: "image", alt: "Scouts" },
             { src: "/images/story/scout2.jpg", type: "image", alt: "Scouts" },
@@ -50,13 +50,13 @@ export const storyData: StorySection[] = [
     {
         id: "lifeline",
         title: "The Lifeline",
-        age: "17 — 26",
+        age: "15 — 24",
         yearRange: "2017 — 2026",
         theme: "Blood & Vision",
         description: "Volunteering since 2017. A network of life across Habiganj, Sylhet, and Dhaka.",
         stats: [
             { label: "Bags Managed", value: "500+" },
-            { label: "Experience", value: "8 Years" }
+            { label: "Experience", value: "9 Years" }
         ],
         media: [
             { src: "/images/story/blood.jpg", type: "image", alt: "Blood Donation" },
@@ -119,7 +119,7 @@ export const storyData: StorySection[] = [
     {
         id: "early-activism",
         title: "The Sparks",
-        age: 14,
+        age: 12,
         yearRange: "2014 — 2017",
         theme: "Activism & Cinema",
         description: "From child journalism to social welfare and independent filmmaking. The early years of expression.",
@@ -141,11 +141,7 @@ export const storyData: StorySection[] = [
             { src: "/images/story/odhivorsho2.jpg", type: "image", alt: "Odhivorsho" },
             { src: "/images/story/nctfMusfiq1846.jpg", type: "image", alt: "NCTF" },
             { src: "/images/story/nctfMusfiq1847.jpg", type: "image", alt: "NCTF" },
-            { src: "/images/story/nctfMusfiq1954.jpg", type: "image", alt: "NCTF" }, // Guessing existing from ls, wait, ls showed 1954? No, ls output was partial maybe? 
-            // Checking ls output again from previous turn...
-            // nctfMusfiq1846.jpg, nctfMusfiq1847.jpg, nctfMusfiq1954.jpg... wait, let me re-verify the ls output in my head.
-            // ls output: nctfMusfiq1846.jpg, nctfMusfiq1847.jpg (from file view). 
-            // The ls command I ran in step 77 showed: nctfMusfiq1846.jpg, nctfMusfiq1847.jpg, nctfMusfiq1954.jpg, nctfMusfiq1955.jpg, nctfMusfiq1956.jpg.
+            { src: "/images/story/nctfMusfiq1954.jpg", type: "image", alt: "NCTF" },
         ]
     },
     {
