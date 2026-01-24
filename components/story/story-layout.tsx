@@ -80,18 +80,34 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
                     }),
                 });
 
-                // Ovizatri (Travel Section - Hide Age/Year)
+                // Ovizatri (Club Section)
                 ScrollTrigger.create({
                     trigger: "#ovizatri",
                     start: "top center",
                     onEnter: () => setGameState({
                         age: ovizatri?.age || "14-18",
                         year: ovizatri?.yearRange || "2016-2020",
-                        visible: false // Hide age/year for travel section
+                        visible: true // Show age/year for Ovizatri club section
                     }),
                     onLeaveBack: () => setGameState({
                         age: renaissance?.age || "18-22",
                         year: renaissance?.yearRange || "2020-2024",
+                        visible: true
+                    }),
+                });
+
+                // Travel Section - Hide Age/Year
+                ScrollTrigger.create({
+                    trigger: "#travel",
+                    start: "top center",
+                    onEnter: () => setGameState({
+                        age: "",
+                        year: "",
+                        visible: false // Hide age/year for travel section
+                    }),
+                    onLeaveBack: () => setGameState({
+                        age: ovizatri?.age || "14-18",
+                        year: ovizatri?.yearRange || "2016-2020",
                         visible: true
                     }),
                 });
@@ -106,9 +122,9 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
                         visible: true
                     }),
                     onLeaveBack: () => setGameState({
-                        age: ovizatri?.age || "14-18",
-                        year: ovizatri?.yearRange || "2016-2020",
-                        visible: true
+                        age: "",
+                        year: "",
+                        visible: false // Coming back from early activism means we're in travel
                     }),
                 });
 
