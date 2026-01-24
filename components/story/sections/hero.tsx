@@ -54,7 +54,7 @@ export default function Hero() {
             <div className="z-10 relative flex flex-col items-center text-center">
                 {/* PORTRAIT */}
                 <div ref={portraitRef} className="relative w-64 h-64 md:w-80 md:h-80 mb-12">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/50 to-transparent backdrop-blur-sm border border-white/40 shadow-2xl z-20" />
+                    {/* Blur removed for clarity */}
                     {/* Using the confirmed portrait path */}
                     <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white shadow-xl">
                         <Image
