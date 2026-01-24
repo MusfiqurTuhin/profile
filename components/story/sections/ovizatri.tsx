@@ -88,11 +88,12 @@ export default function Ovizatri() {
                     </div>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Stats */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-4">
                         {data.stats?.map((stat, i) => (
                             <div key={i} className="bg-white/50 p-4 rounded-sm border border-stone-200">
-                                <span className="block text-2xl font-bold text-story-red font-sans">{stat.value}</span>
-                                <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">{stat.label}</span>
+                                <span className="block text-xl xl:text-2xl font-bold text-story-red font-sans break-words leading-tight mb-1">{stat.value}</span>
+                                <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500 block">{stat.label}</span>
                             </div>
                         ))}
                     </div>
