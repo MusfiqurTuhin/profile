@@ -209,112 +209,99 @@ export default function TravelMapInteractive() {
                     </div>
                 </div>
 
-                {/* RIGHT: Photo Gallery - Mobile Optimized */}
-                <div className="relative min-h-[50vh] lg:min-h-screen">
-                    <div className="lg:relative lg:h-screen">
-                        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:block lg:relative lg:h-full p-4">
-                            {[
-                                "468526371_17994753080714591_832146755417126345_n.jpg",
-                                "480474287_1022664116634283_6861207374996785542_n.jpg",
-                                "480475216_1021942273373134_5359121277222586579_n.jpg",
-                                "481274784_18005609453714591_6425983771888587927_n.jpeg",
-                                "488725977_1058223169745044_9109197646216975619_n.jpg",
-                                "490275841_1064930105741017_4138701779973042969_n.jpg",
-                                "491355347_1077928621107832_1455165775556501128_n.jpg",
-                                "491999623_1077928627774498_6600704608818726482_n.jpg",
-                                "492088254_1077928811107813_3262497670119431978_n.jpg",
-                                "492101807_1078334367733924_1481840040689288507_n.jpg",
-                                "492331246_1078337644400263_1333415051765423674_n.jpg",
-                                "492336331_1078336591067035_8219196515500960976_n.jpg",
-                                "492414530_1077936207773740_215282736116850438_n.jpg",
-                                "492501480_1078334227733938_817954589743068738_n.jpg",
-                                "492554455_1078334331067261_3711685723591352569_n.jpg",
-                                "493315558_1078040754429952_6862375236586650486_n.jpg",
-                                "493494265_1078338271066867_4899950149779093717_n.jpg",
-                                "502492348_1110321691201858_4845616588514134424_n.jpg",
-                                "502571387_1115139980720029_8130666282325262220_n.jpg",
-                                "502760469_1110637697836924_5531822604082594632_n.jpg",
-                                "503109874_1110638024503558_2398790745391810529_n.jpg",
-                                "503112602_1110638071170220_56437373839755170_n.jpg",
-                                "503756996_1115202517380442_7404165618164172875_n.jpg",
-                                "503878971_1114060850827942_3699377490715900035_n.jpg",
-                                "503879863_1114058927494801_1476061854573685382_n.jpg",
-                                "504003074_1114061114161249_5189603870441890135_n.jpg",
-                                "504003258_1115152157385478_8442439546019598295_n.jpg",
-                                "504015455_1115152200718807_2237967630783928977_n.jpg",
-                                "504035079_1114060930827934_1306616686248798283_n.jpg",
-                                "504295217_1114061977494496_7718011613536028372_n.jpg",
-                                "504675337_1116693503898010_2742263488936279400_n.jpg",
-                                "504722447_1116082060625821_6002743779345603788_n.jpg",
-                                "505968254_1120019586898735_4952558744848710900_n.jpg",
-                                "506027781_1120716073495753_1415266596292302109_n.jpg",
-                                "506112209_1119951960238831_7556508955474076288_n.jpg",
-                                "506634871_1124015106499183_5223177275657689670_n.jpg",
-                                "508260820_1123933509840676_3356957366671664870_n.jpg",
-                            ].map((filename, idx) => {
-                                // Chaotic only on Desktop (lg)
-                                const randomRotation = (Math.random() - 0.5) * 20;
-                                const randomScale = 0.8 + Math.random() * 0.4;
-                                const isLarge = idx % 5 === 0;
+                {/* RIGHT: Photo Gallery - Chaotic Spread on ALL devices */}
+                <div className="relative min-h-[150vh] lg:min-h-screen w-full overflow-hidden">
+                    {/* Container for absolute items */}
+                    <div className="absolute inset-0 w-full h-full">
+                        {[
+                            "468526371_17994753080714591_832146755417126345_n.jpg",
+                            "480474287_1022664116634283_6861207374996785542_n.jpg",
+                            "480475216_1021942273373134_5359121277222586579_n.jpg",
+                            "481274784_18005609453714591_6425983771888587927_n.jpeg",
+                            "488725977_1058223169745044_9109197646216975619_n.jpg",
+                            "490275841_1064930105741017_4138701779973042969_n.jpg",
+                            "491355347_1077928621107832_1455165775556501128_n.jpg",
+                            "491999623_1077928627774498_6600704608818726482_n.jpg",
+                            "492088254_1077928811107813_3262497670119431978_n.jpg",
+                            "492101807_1078334367733924_1481840040689288507_n.jpg",
+                            "492331246_1078337644400263_1333415051765423674_n.jpg",
+                            "492336331_1078336591067035_8219196515500960976_n.jpg",
+                            "492414530_1077936207773740_215282736116850438_n.jpg",
+                            "492501480_1078334227733938_817954589743068738_n.jpg",
+                            "492554455_1078334331067261_3711685723591352569_n.jpg",
+                            "493315558_1078040754429952_6862375236586650486_n.jpg",
+                            "493494265_1078338271066867_4899950149779093717_n.jpg",
+                            "502492348_1110321691201858_4845616588514134424_n.jpg",
+                            "502571387_1115139980720029_8130666282325262220_n.jpg",
+                            "502760469_1110637697836924_5531822604082594632_n.jpg",
+                            "503109874_1110638024503558_2398790745391810529_n.jpg",
+                            "503112602_1110638071170220_56437373839755170_n.jpg",
+                            "503756996_1115202517380442_7404165618164172875_n.jpg",
+                            "503878971_1114060850827942_3699377490715900035_n.jpg",
+                            "503879863_1114058927494801_1476061854573685382_n.jpg",
+                            "504003074_1114061114161249_5189603870441890135_n.jpg",
+                            "504003258_1115152157385478_8442439546019598295_n.jpg",
+                            "504015455_1115152200718807_2237967630783928977_n.jpg",
+                            "504035079_1114060930827934_1306616686248798283_n.jpg",
+                            "504295217_1114061977494496_7718011613536028372_n.jpg",
+                            "504675337_1116693503898010_2742263488936279400_n.jpg",
+                            "504722447_1116082060625821_6002743779345603788_n.jpg",
+                            "505968254_1120019586898735_4952558744848710900_n.jpg",
+                            "506027781_1120716073495753_1415266596292302109_n.jpg",
+                            "506112209_1119951960238831_7556508955474076288_n.jpg",
+                            "506634871_1124015106499183_5223177275657689670_n.jpg",
+                            "508260820_1123933509840676_3356957366671664870_n.jpg",
+                        ].map((filename, idx, arr) => {
+                            // Chaotic Calculations - Distributed along the full height
+                            // We use idx to guarantee Spread
+                            const totalItems = arr.length;
+                            const verticalStep = 90 / totalItems; // Step size to traverse 90% of height
+                            const baseTop = idx * verticalStep;
 
-                                return (
-                                    <div
-                                        key={filename}
-                                        className="relative group cursor-pointer lg:absolute"
-                                        style={{
-                                            // Reset styles for mobile/desktop toggle
-                                            top: undefined,
-                                            left: undefined,
-                                            transform: undefined,
-                                            // Apply desktop-only styles via class or inline check? 
-                                            // React inline styles apply everywhere. We need media query logic or CSS classes.
-                                            // We'll use CSS variable trick or simple class override.
-                                            // Actually, easier to use a mounted check or CSS media query for positioning.
-                                            // Let's use simple CSS classes for mobile resets.
-                                        }}
-                                    >
-                                        <div
-                                            className="hidden lg:block absolute transition-all duration-500"
-                                            style={{
-                                                top: `${(idx % 7) * 14}%`,
-                                                left: `${(idx % 5) * 20}%`,
-                                                transform: `rotate(${randomRotation}deg) scale(${randomScale})`,
-                                                zIndex: 1,
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                e.currentTarget.style.zIndex = "50";
-                                                e.currentTarget.style.transform = `rotate(0deg) scale(1.3)`;
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                e.currentTarget.style.zIndex = "1";
-                                                e.currentTarget.style.transform = `rotate(${randomRotation}deg) scale(${randomScale})`;
-                                            }}
-                                        >
-                                            {/* Polaroid Frame - Desktop */}
-                                            <div className="bg-white p-2 shadow-2xl rounded-lg">
-                                                <div className={`${isLarge ? "w-48 h-48" : "w-32 h-32"} rounded-full overflow-hidden border-4 border-white shadow-inner bg-stone-100`}>
-                                                    <img src={`/images/Travel/${filename}`} alt={`Travel ${idx + 1}`} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-                                                </div>
-                                            </div>
-                                        </div>
+                            // Add randomness to top but keep within a band to ensure spread
+                            const randomTopOffset = (Math.random() - 0.5) * 5;
+                            const topPos = Math.max(0, Math.min(90, baseTop + randomTopOffset));
 
-                                        {/* Mobile Grid Item - Now Chaotic */}
-                                        <div className="lg:hidden block transform transition-all duration-500"
-                                            style={{
-                                                transform: `rotate(${randomRotation}deg) scale(${randomScale})`,
-                                                margin: `${Math.abs(randomRotation)}px`, // Add some spacing based on rotation to prevent overlap
-                                            }}
-                                        >
-                                            <div className="bg-white p-1 rounded shadow-sm">
-                                                <div className="aspect-square rounded-full overflow-hidden border-2 border-white shadow-inner bg-stone-100">
-                                                    <img src={`/images/Travel/${filename}`} alt={`Travel ${idx + 1}`} className="w-full h-full object-cover grayscale" />
-                                                </div>
-                                            </div>
+                            // Random Left (0% to 70% to avoid overflow right)
+                            const leftPos = Math.random() * 60 + 5; // 5% to 65%
+
+                            const randomRotation = (Math.random() - 0.5) * 40; // -20 to 20 deg
+                            const randomScale = 0.8 + Math.random() * 0.4;
+                            const isLarge = idx % 5 === 0;
+
+                            return (
+                                <div
+                                    key={filename}
+                                    className="absolute transition-all duration-500 hover:z-50 group cursor-move"
+                                    style={{
+                                        top: `${topPos}%`,
+                                        left: `${leftPos}%`,
+                                        transform: `rotate(${randomRotation}deg) scale(${randomScale})`,
+                                        zIndex: 1,
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.zIndex = "50";
+                                        e.currentTarget.style.transform = `rotate(0deg) scale(1.3)`;
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.zIndex = "1";
+                                        e.currentTarget.style.transform = `rotate(${randomRotation}deg) scale(${randomScale})`;
+                                    }}
+                                >
+                                    {/* Polaroid Frame */}
+                                    <div className="bg-white p-2 shadow-xl rounded-lg transform hover:scale-105 transition-transform duration-300">
+                                        <div className={`${isLarge ? "w-32 h-32 md:w-48 md:h-48" : "w-24 h-24 md:w-32 md:h-32"} rounded-full overflow-hidden border-4 border-white shadow-inner bg-stone-100`}>
+                                            <img
+                                                src={`/images/Travel/${filename}`}
+                                                alt={`Travel ${idx + 1}`}
+                                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                                loading="lazy"
+                                            />
                                         </div>
                                     </div>
-                                );
-                            })}
-                        </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
