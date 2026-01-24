@@ -67,7 +67,7 @@ export default function Foundation() {
 
             <div className="text-center mb-24 relative z-10 pointer-events-none">
                 <h2 className="text-5xl md:text-7xl font-black text-story-charcoal leading-none tracking-tight">
-                    DISCIPLINE &<br />DUTY
+                    Scouting
                 </h2>
                 <p className="mt-6 max-w-lg mx-auto text-xl bg-white/50 backdrop-blur-sm p-4 rounded-lg text-story-charcoal/80">
                     {data.description}

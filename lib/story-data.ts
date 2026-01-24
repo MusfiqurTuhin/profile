@@ -23,8 +23,8 @@ export const storyData: StorySection[] = [
         title: "The Foundation",
         age: "11 — 16",
         yearRange: "2013 — 2018",
-        theme: "Discipline & Duty",
-        description: "At 11, I didn't just participate. I founded. Roots in service and discipline through Scouts and social organizations.",
+        theme: "Scouting",
+        description: "School life shaped by scouting: parades, camps, discipline, and service. Building character through adventure and duty.",
         media: [
             { src: "/images/story/scout.jpg", type: "image", alt: "Scouts" },
             { src: "/images/story/scout2.jpg", type: "image", alt: "Scouts" },
