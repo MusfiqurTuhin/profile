@@ -11,8 +11,8 @@ export default function Navbar() {
     const corpLinks = [
         { label: "Research", id: "research" },
         { label: "Software", id: "software" },
-        { label: "Education", id: "education" },
-        { label: "Impact", id: "impact" },
+        { label: "EXPERIENCE & EDUCATION", id: "education" },
+        { label: "Testimonials", id: "impact" },
     ];
 
     const storyLinks = [
