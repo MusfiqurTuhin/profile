@@ -74,14 +74,14 @@ export default function TravelMapInteractive() {
     }
 
     return (
-        <section id="ovizatri" className="min-h-screen w-full py-20 md:py-32 px-6 bg-white relative overflow-hidden">
+        <section className="min-h-screen w-full py-20 md:py-32 px-6 bg-white relative overflow-hidden">
             {/* Header */}
             <div className="max-w-7xl mx-auto mb-12 text-center">
                 <h2 className="text-5xl md:text-7xl font-black text-stone-900 tracking-tight mb-4 font-mono uppercase">
-                    Ovizatri
+                    ON THE GROUND
                 </h2>
                 <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto">
-                    Exploring Bangladesh, one district at a time — 28 destinations and counting
+                    Connecting the Grassroots. Traveling not to escape, but to understand.
                 </p>
             </div>
 
