@@ -78,7 +78,7 @@ export default function Navbar() {
                             <div
                                 className={cn(
                                     "w-2.5 h-2.5 md:w-4 md:h-4 rounded-full bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                                    mode === "story" ? "translate-x-4 lg:translate-x-6 bg-amber-400" : "translate-x-0 bg-sky-400"
+                                    mode === "story" ? "translate-x-4 lg:translate-x-6 bg-red-500" : "translate-x-0 bg-sky-400"
                                 )}
                             />
                         </button>
