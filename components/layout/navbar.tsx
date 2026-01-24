@@ -31,7 +31,12 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center mix-blend-difference text-white pointer-events-none">
+        <nav className={cn(
+            "absolute top-0 left-0 w-full z-50 p-6 flex justify-between items-center transition-colors duration-300 backdrop-blur-md border-b-[0.5px]",
+            mode === "corporate"
+                ? "bg-black/50 text-white border-white/10"
+                : "bg-stone-50/60 text-stone-900 border-black/5"
+        )}>
             <div className="pointer-events-auto">
                 <h1 className="text-xl font-bold tracking-tighter uppercase cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                     Musfiqur Tuhin
@@ -84,7 +89,7 @@ export default function Navbar() {
                             "text-xs uppercase tracking-widest transition-colors hover:scale-105 active:scale-95",
                             mode === "corporate"
                                 ? "font-mono text-zinc-400 hover:text-cyan-400"
-                                : "font-sans font-bold text-zinc-300 hover:text-red-500 mix-blend-difference"
+                                : "font-sans font-bold text-zinc-600 hover:text-red-600"
                         )}
                     >
                         {link.label}
