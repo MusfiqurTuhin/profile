@@ -57,7 +57,7 @@ export default function Navbar() {
                 {/* Toggle: Relative on Mobile (Right), Absolute Center on Desktop */}
                 <div className="relative md:absolute md:left-1/2 md:-translate-x-1/2 flex flex-col items-center justify-center gap-2">
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
-                        <span className={cn("text-[10px] md:text-xs transition-opacity hidden sm:inline", mode === "story" ? "opacity-50" : "opacity-100 font-bold")}>
+                        <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "story" ? "opacity-50" : "opacity-100 font-bold")}>
                             Brain
                         </span>
                         <button
@@ -72,9 +72,18 @@ export default function Navbar() {
                                 )}
                             />
                         </button>
-                        <span className={cn("text-[10px] md:text-xs transition-opacity hidden sm:inline", mode === "corporate" ? "opacity-50" : "opacity-100 font-bold")}>
+                        <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "corporate" ? "opacity-50" : "opacity-100 font-bold")}>
                             Heart
                         </span>
+                    </div>
+
+                    {/* Interaction Hint - Restored */}
+                    <div className="absolute -bottom-8 animate-bounce whitespace-nowrap hidden md:block">
+                        {/* Hidden on mobile to avoid overlapping content, but labels are back */}
+                        <div className="bg-story-red/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg relative">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full border-4 border-transparent border-b-story-red/90" />
+                            TAP TO SWITCH OR SCROLL DOWN
+                        </div>
                     </div>
                 </div>
 
