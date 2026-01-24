@@ -65,7 +65,7 @@ export default function TravelMapInteractive() {
 
     if (!mounted) {
         return (
-            <section className="min-h-screen w-full py-20 md:py-32 px-6 bg-white">
+            <section id="travel" className="min-h-screen w-full py-20 md:py-32 px-6 bg-white">
                 <div className="max-w-7xl mx-auto text-center">
                     <div className="text-2xl font-mono text-stone-500">Loading Map...</div>
                 </div>
