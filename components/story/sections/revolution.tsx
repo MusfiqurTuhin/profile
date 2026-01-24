@@ -185,7 +185,7 @@ export default function Revolution() {
                                     className="h-full w-auto object-contain block"
                                     sizes="(max-width: 768px) 80vw, 400px"
                                     quality={80}
-                                    loading="lazy"
+                                    priority={i < 4} // Eager load the first few items
                                     onLoad={() => ScrollTrigger.refresh()}
                                 />
                             )}
