@@ -21,8 +21,8 @@ export const storyData: StorySection[] = [
     {
         id: "foundation",
         title: "The Foundation",
-        age: "11 — 13",
-        yearRange: "2013 — 2015",
+        age: "11 — 16",
+        yearRange: "2013 — 2018",
         theme: "Discipline & Duty",
         description: "At 11, I didn't just participate. I founded. Roots in service and discipline through Scouts and social organizations.",
         media: [
