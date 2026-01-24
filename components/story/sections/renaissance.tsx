@@ -112,8 +112,8 @@ export default function Renaissance() {
                     </div>
                 </div>
 
-                {/* Stats Grid - Minimal */}
-                <div className="grid grid-cols-3 gap-6 mb-12 fade-in border-y border-stone-200 py-8">
+                {/* Stats Grid - Responsive */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-6 mb-12 fade-in border-y border-stone-200 py-8">
                     <div className="text-center">
                         <span className="block text-4xl font-bold text-story-red font-sans counter">3</span>
                         <span className="text-xs font-mono uppercase tracking-widest text-stone-500">National Festivals</span>

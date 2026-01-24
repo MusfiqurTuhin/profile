@@ -86,20 +86,26 @@ export default function ExperienceEducation() {
                     </div>
 
                     {/* Section Titles - Much bigger as requested */}
-                    <div className="hidden md:flex justify-between mb-24 px-4 lg:px-12">
+                    {/* Section Titles - Responsive */}
+                    <div className="flex flex-col md:flex-row justify-between mb-12 md:mb-24 px-4 lg:px-12 gap-8 md:gap-0">
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center gap-4 text-cyan-400">
-                                <BookOpen size={40} className="stroke-[1.5]" />
-                                <h3 className="text-4xl lg:text-5xl font-black tracking-tighter uppercase italic">The Learning</h3>
+                                <BookOpen size={32} className="stroke-[1.5] md:w-10 md:h-10" />
+                                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter uppercase italic">The Learning</h3>
                             </div>
-                            <span className="text-zinc-600 font-mono text-xs tracking-[0.3em] ml-14 uppercase">Academic_Foundation</span>
+                            <span className="text-zinc-600 font-mono text-[10px] md:text-xs tracking-[0.3em] ml-12 md:ml-14 uppercase">Academic_Foundation</span>
                         </div>
-                        <div className="flex flex-col items-end gap-2">
+
+                        {/* Mobile Divider */}
+                        <div className="w-full h-px bg-zinc-800 md:hidden" />
+
+                        <div className="flex flex-col items-start md:items-end gap-2">
                             <div className="flex items-center gap-4 text-purple-400">
-                                <h3 className="text-4xl lg:text-5xl font-black tracking-tighter uppercase italic">The Doing</h3>
-                                <Briefcase size={40} className="stroke-[1.5]" />
+                                {/* Icon moved to right on desktop, left on mobile for consistency? Or keep split? Keeping split for symmetry */}
+                                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter uppercase italic order-2 md:order-1">The Doing</h3>
+                                <Briefcase size={32} className="stroke-[1.5] md:w-10 md:h-10 order-1 md:order-2" />
                             </div>
-                            <span className="text-zinc-600 font-mono text-xs tracking-[0.3em] mr-14 uppercase">Execution_Layer</span>
+                            <span className="text-zinc-600 font-mono text-[10px] md:text-xs tracking-[0.3em] ml-12 md:mr-14 uppercase">Execution_Layer</span>
                         </div>
                     </div>
 

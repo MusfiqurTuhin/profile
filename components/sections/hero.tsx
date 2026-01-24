@@ -110,7 +110,7 @@ export default function Hero() {
                 <div className="relative text-center md:text-left mix-blend-screen">
                     <div className={`w-24 h-1 hero-line mb-6 hidden md:block ${mode === "story" ? "bg-red-600" : "bg-cyan-500"}`} />
 
-                    <h1 className={`glitch-title text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 md:mb-4 ${mode === "story"
+                    <h1 className={`glitch-title text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 md:mb-4 ${mode === "story"
                         ? "text-stone-900"
                         : "text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white filter drop-shadow-[0_0_10px_rgba(0,240,255,0.3)]"
                         }`}>
