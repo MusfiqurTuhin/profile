@@ -37,16 +37,16 @@ export default function LifeMeter({ age, year, visible }: LifeMeterProps) {
             className={`fixed top-28 right-8 z-[100] text-right pointer-events-none transition-all duration-500 ease-in-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
                 }`}
         >
-            <div className="flex flex-col items-end bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-2xl">
+            <div className="flex flex-col items-end bg-black/40 backdrop-blur-md p-3 md:p-4 rounded-xl border border-white/10 shadow-2xl">
                 <div className="flex items-baseline gap-2 text-story-red">
-                    <span className="text-xs font-mono uppercase tracking-widest text-white/50">Age</span>
-                    <h2 ref={ageRef} className="text-4xl md:text-5xl font-black tracking-tighter leading-none font-mono">
+                    <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-white/50">Age</span>
+                    <h2 ref={ageRef} className="text-2xl md:text-5xl font-black tracking-tighter leading-none font-mono">
                         {age}
                     </h2>
                 </div>
                 <div className="flex items-center gap-2 mt-1 text-story-red">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-white/50">Year</span>
-                    <p ref={yearRef} className="text-sm md:text-base font-mono font-bold opacity-80">
+                    <span className="text-[8px] md:text-[10px] font-mono uppercase tracking-widest text-white/50">Year</span>
+                    <p ref={yearRef} className="text-xs md:text-base font-mono font-bold opacity-80">
                         {year}
                     </p>
                 </div>
