@@ -570,6 +570,7 @@ export const socialLinks = {
     twitter: "https://twitter.com/Musfiqur_Tuhin",
     youtube: "https://www.youtube.com/@musfiqurtuhin",
     telegram: "https://t.me/musfiqurtuhin",
+    messenger: "https://m.me/TuhinMusfiqur",
     whatsapp: "https://wa.me/+8801521563251",
     email: "mailto:musfiqurrahmantuhin@gmail.com"
 };
