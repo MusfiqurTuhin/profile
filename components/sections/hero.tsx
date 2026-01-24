@@ -95,7 +95,7 @@ export default function Hero() {
                     <div className="hidden md:block">{mode === "story" ? "JULY_SPIRIT" : "SECURE_V4.2"}</div>
                 </div>
 
-                <div className="relative mb-8 group flex justify-center md:justify-start">
+                <div className="relative mb-8 group flex justify-center">
                     <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-cyan-500/50 shadow-[0_0_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)] transition-shadow duration-500">
                         <div className="absolute inset-0 bg-cyan-500/10 mix-blend-overlay z-10" />
                         <Image
