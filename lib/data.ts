@@ -328,7 +328,11 @@ export const storyGallery: Record<string, MediaItem[]> = {
         { src: "/images/story/july4.jpg", alt: "July Movement" },
         { src: "/images/story/july 6.jpg", alt: "July Movement" },
         { src: "/images/story/julyyy.jpg", alt: "July Movement" },
+        // Videos
+        { src: "/images/story/july1.mp4", type: "video", alt: "July Revolution Main" },
         { src: "/images/story/july.mp4", type: "video", alt: "July Movement" },
+        { src: "/images/story/julyyyy.mp4", type: "video", alt: "July Protest" },
+        { src: "/images/story/julyyyyyy.mp4", type: "video", alt: "July Protest Large" },
     ],
     postJuly: [
         { src: "/images/story/post july.jpg", alt: "Post July" },
@@ -337,7 +341,12 @@ export const storyGallery: Record<string, MediaItem[]> = {
         { src: "/images/story/post july3_1.jpg", alt: "Post July" },
         { src: "/images/story/post julyy.jpg", alt: "Post July" },
         { src: "/images/story/post july 3_2.jpg", alt: "Post July" },
+        // Videos
+        { src: "/images/story/post july university movemeny.mp4", type: "video", alt: "University Movement" },
         { src: "/images/story/post jullly.mp4", type: "video", alt: "Post July" },
+        { src: "/images/story/post julllyy.mp4", type: "video", alt: "Post July" },
+        { src: "/images/story/post july.mp4", type: "video", alt: "Post July" },
+        { src: "/images/story/post julyyy.mp4", type: "video", alt: "Post July" },
     ],
     social: [
         // Muktanchol
