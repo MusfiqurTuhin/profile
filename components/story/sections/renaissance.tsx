@@ -167,7 +167,8 @@ export default function Renaissance() {
                                     src={media.src}
                                     alt={media.alt}
                                     className="h-full w-auto"
-                                    loading="lazy"
+                                    loading="eager"
+                                    decoding="sync"
                                 />
                             </div>
                         ))}
@@ -184,7 +185,8 @@ export default function Renaissance() {
                                     src={media.src}
                                     alt={media.alt}
                                     className="h-full w-auto"
-                                    loading="lazy"
+                                    loading="eager"
+                                    decoding="sync"
                                 />
                             </div>
                         ))}

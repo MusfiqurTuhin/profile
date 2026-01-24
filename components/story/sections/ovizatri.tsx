@@ -124,7 +124,7 @@ export default function Ovizatri() {
                                             className="w-full h-auto block"
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                             quality={80}
-                                            loading="eager" // Keep eager as it is above/near fold or critical marquee
+                                            priority={true} // Keep eager as it is above/near fold or critical marquee
                                             onLoad={() => ScrollTrigger.refresh()}
                                         />
                                     </div>

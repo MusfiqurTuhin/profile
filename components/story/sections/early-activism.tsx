@@ -154,6 +154,8 @@ export default function EarlyActivism() {
                                                 src={film.images[0]}
                                                 alt={film.title + " Poster"}
                                                 className="w-full h-auto object-contain block hover:scale-105 transition-transform duration-700"
+                                                loading="eager"
+                                                decoding="sync"
                                             />
                                         </div>
 
@@ -194,6 +196,8 @@ export default function EarlyActivism() {
                                                             src={img}
                                                             alt="Scene"
                                                             className="w-full h-auto object-contain block"
+                                                            loading="eager"
+                                                            decoding="sync"
                                                         />
                                                     </div>
                                                 ))}
@@ -242,6 +246,8 @@ export default function EarlyActivism() {
                                                 src={img}
                                                 alt={social.title}
                                                 className="w-full h-auto block grayscale-[0.3] contrast-[1.1] hover:grayscale-0 transition-all duration-500"
+                                                loading="eager"
+                                                decoding="sync"
                                             />
                                         </div>
                                     ))}

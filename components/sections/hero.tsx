@@ -85,9 +85,12 @@ export default function Hero() {
                     {/* The Image Container */}
                     <div className="relative bg-black shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
                         {/* Your Image with Black BG */}
-                        <img
+                        <Image
                             src="/images/story/Md Musfiqur Rahman.jpg"
                             alt="Musfiqur Tuhin"
+                            width={500}
+                            height={700}
+                            priority={true}
                             className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                         />
 
@@ -159,6 +162,7 @@ export default function Hero() {
                             src="/images/story/Md Musfiqur Rahman.jpg"
                             alt="System Architect"
                             fill
+                            priority={true}
                             className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                         />
                     </div>

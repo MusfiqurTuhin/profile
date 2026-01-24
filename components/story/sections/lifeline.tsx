@@ -85,6 +85,7 @@ export default function Lifeline() {
                                 alt={media.alt}
                                 fill
                                 className="object-cover opacity-90"
+                                priority={true}
                             />
                         </div>
                     ))}
