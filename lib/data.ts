@@ -337,7 +337,6 @@ export const storyGallery: Record<string, MediaItem[]> = {
     postJuly: [
         { src: "/images/story/post july.jpg", alt: "Post July" },
         { src: "/images/story/post july2.jpg", alt: "Post July" },
-        { src: "/images/story/post july3.jpg", alt: "Post July" },
         { src: "/images/story/post july3_1.jpg", alt: "Post July" },
         { src: "/images/story/post julyy.jpg", alt: "Post July" },
         { src: "/images/story/post july 3_2.jpg", alt: "Post July" },

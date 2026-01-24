@@ -212,7 +212,6 @@ export const storyData: StorySection[] = [
             { src: "/images/story/julyyy.jpg", type: "image", alt: "July Protest" },
             { src: "/images/story/post july.jpg", type: "image", alt: "Post July" },
             { src: "/images/story/post july2.jpg", type: "image", alt: "Post July" },
-            { src: "/images/story/post july3.jpg", type: "image", alt: "Post July" },
             { src: "/images/story/post july3_1.jpg", type: "image", alt: "Post July" },
             { src: "/images/story/post july 3_2.jpg", type: "image", alt: "Post July" },
             { src: "/images/story/post julyy.jpg", type: "image", alt: "Post July" },
