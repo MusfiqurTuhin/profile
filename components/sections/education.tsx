@@ -134,7 +134,7 @@ export default function ExperienceEducation() {
                                                     </div>
                                                     <h4 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">{eduItem.degree}</h4>
                                                     <p className="text-zinc-400 text-sm md:text-base mb-1">{eduItem.institution}</p>
-                                                    {eduItem.major && <p className="text-zinc-500 text-xs font-mono uppercase tracking-[0.2em] mt-4">MOD_FOCUS: {eduItem.major}</p>}
+                                                    {eduItem.major && <p className="text-zinc-500 text-xs font-mono uppercase tracking-[0.2em] mt-4">{eduItem.major === "Data Science" ? "Major" : "Group"}: {eduItem.major}</p>}
                                                 </div>
                                             </div>
                                         )}

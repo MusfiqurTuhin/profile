@@ -41,10 +41,8 @@ export default function Testimonials() {
                     <div className="flex flex-col md:flex-row items-center gap-4 text-zinc-500 font-mono text-sm uppercase tracking-widest">
                         <span className="flex items-center gap-2">
                             <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                            Live_Link_Established
+                            All authentic testimonials are directly sourced from fiverr
                         </span>
-                        <span className="hidden md:inline text-zinc-800">|</span>
-                        <span>Satellite_Feed_Active</span>
                     </div>
                 </div>
 
