@@ -108,7 +108,7 @@ export default function Hero() {
                 <div className="relative bg-black shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
                     {/* Your Image with Black BG */}
                     <img
-                        src="/images/story/Md Musfiqur Rahman.jpg"
+                        src="/images/story/70977299.jpeg"
                         alt="Musfiqur Tuhin"
                         className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                     />
