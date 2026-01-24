@@ -21,7 +21,7 @@ export const storyData: StorySection[] = [
     {
         id: "foundation",
         title: "The Foundation",
-        age: 11,
+        age: "11 — 13",
         yearRange: "2013 — 2015",
         theme: "Discipline & Duty",
         description: "At 11, I didn't just participate. I founded. Roots in service and discipline through Scouts and social organizations.",
@@ -71,7 +71,7 @@ export const storyData: StorySection[] = [
     {
         id: "renaissance",
         title: "The Renaissance",
-        age: 18,
+        age: "18 — 22",
         yearRange: "2020 — 2024",
         theme: "The Intellectual",
         description: "Founder & President of Muktanchol Sahittya Chorcha Kendro. Preserving culture in a digital age.",
@@ -119,7 +119,7 @@ export const storyData: StorySection[] = [
     {
         id: "early-activism",
         title: "The Sparks",
-        age: 12,
+        age: "12 — 15",
         yearRange: "2014 — 2017",
         theme: "Activism & Cinema",
         description: "From child journalism to social welfare and independent filmmaking. The early years of expression.",
@@ -147,7 +147,7 @@ export const storyData: StorySection[] = [
     {
         id: "ovizatri",
         title: "অভিযাত্রী (Ovizatri)",
-        age: 14,
+        age: "14 — 18",
         yearRange: "2016 — 2020",
         theme: "The Community Leader",
         description: "Founder & General Secretary | 2016–2020. A district-wide voluntary network serving humanity.",
@@ -180,7 +180,7 @@ export const storyData: StorySection[] = [
     {
         id: "revolution",
         title: "The Uprising & Reform",
-        age: 22,
+        age: "22 — 24",
         yearRange: "2024 — 2026",
         theme: "Revolution & Reconstruction",
         description: "From leading the July Uprising to building the foundations of a new political reality.",
