@@ -36,23 +36,23 @@ export default function Navbar() {
 
     return (
         <nav className={cn(
-            "fixed top-0 left-0 w-full z-50 p-4 md:p-6 flex justify-between items-center transition-colors duration-300 backdrop-blur-md border-b-[0.5px]",
+            "fixed top-0 left-0 w-full z-50 p-4 md:p-6 grid grid-cols-[1fr_auto_1fr] items-center transition-colors duration-300 backdrop-blur-md border-b-[0.5px]",
             mode === "corporate"
                 ? "bg-black/50 text-white border-white/10"
                 : "bg-stone-50/60 text-stone-900 border-black/5"
         )}>
             {/* Left: Brand */}
-            <div className="pointer-events-auto z-50 relative">
+            <div className="pointer-events-auto z-50 relative flex items-center justify-start">
                 <h1 className="text-lg md:text-xl font-bold tracking-tighter uppercase cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                     Musfiqur Tuhin
                 </h1>
-                <p className="text-[10px] md:text-xs opacity-70 hidden sm:block">
+                <p className="text-[10px] md:text-xs opacity-70 hidden sm:block ml-2">
                     {mode === "corporate" ? "AI & Machine Learning" : "The Living Archive"}
                 </p>
             </div>
 
-            {/* Center: Toggle (Always visible) */}
-            <div className="pointer-events-auto absolute left-1/2 -translate-x-1/2 top-4 md:top-6 flex flex-col items-center gap-2 z-50">
+            {/* Center: Toggle */}
+            <div className="pointer-events-auto flex flex-col items-center justify-center gap-2 z-50">
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
                     <span className={cn("text-[10px] md:text-xs transition-opacity", mode === "story" ? "opacity-50" : "opacity-100 font-bold")}>
                         Brain
@@ -76,7 +76,7 @@ export default function Navbar() {
             </div>
 
             {/* Right: Desktop Nav & Mobile Burger */}
-            <div className="pointer-events-auto z-50">
+            <div className="pointer-events-auto z-50 flex items-center justify-end">
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-6">
                     {(mode === "corporate" ? corpLinks : storyLinks).map((link) => (
@@ -106,6 +106,9 @@ export default function Navbar() {
                     <div className={cn("w-6 h-0.5 transition-all bg-current", mobileMenuOpen && "-rotate-45 -translate-y-2")} />
                 </button>
             </div>
+
+            {/* Interaction Hint (Removed from flow, absolute positioning relative to nav container might be tricky in grid, removing for cleaner mobile view or keeping absolutely positioned relative to nav?) */}
+            {/* Keeping it simple for now, the hint was causing clutter. We can re-add if needed, but the 'always visible' nature makes it less necessary to 'tap to switch' hint constantly. */}
 
             {/* Mobile Menu Overlay */}
             <div className={cn(
