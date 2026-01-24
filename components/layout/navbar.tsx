@@ -16,12 +16,12 @@ export default function Navbar() {
     ];
 
     const storyLinks = [
-        { label: "22Y — 24Y", id: "revolution" },
-        { label: "18Y — 22Y", id: "renaissance" },
-        { label: "14Y — 18Y", id: "ovizatri" },
-        { label: "12Y — 15Y", id: "early-activism" },
-        { label: "15Y — 24Y", id: "lifeline" },
-        { label: "11Y — 16Y", id: "foundation" },
+        { label: "24Y — 22Y", id: "revolution" },
+        { label: "22Y — 18Y", id: "renaissance" },
+        { label: "18Y — 14Y", id: "ovizatri" },
+        { label: "15Y — 12Y", id: "early-activism" },
+        { label: "24Y — 15Y", id: "lifeline" },
+        { label: "16Y — 11Y", id: "foundation" },
     ];
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
