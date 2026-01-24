@@ -19,7 +19,6 @@ interface StoryLayoutProps {
 export default function StoryLayout({ children }: StoryLayoutProps) {
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const redThreadRef = useRef<HTMLDivElement>(null);
     const [gameState, setGameState] = useState<{ age: string | number; year: string | number; visible: boolean }>({
         age: "22-24",
         year: "2024-2026",
@@ -29,18 +28,7 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
     useEffect(() => {
         const ctx = gsap.context(() => {
             // --- GLOBAL: THE RED THREAD ---
-            if (redThreadRef.current) {
-                gsap.to(redThreadRef.current, {
-                    height: "100%",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top top",
-                        end: "bottom bottom",
-                        scrub: 0,
-                    },
-                });
-            }
+            // This section was removed as per instruction.
 
             // --- SECTION TRIGGERS ---
             // These IDs must match the section components' IDs
@@ -108,13 +96,7 @@ export default function StoryLayout({ children }: StoryLayoutProps) {
                 {/* HUD */}
                 <LifeMeter age={gameState.age} year={gameState.year} visible={gameState.visible} />
 
-                {/* THE RED THREAD */}
-                <div className="fixed top-0 left-6 md:left-12 bottom-0 w-[1px] md:w-[2px] bg-black/5 z-40 h-full pointer-events-none">
-                    <div
-                        ref={redThreadRef}
-                        className="w-full bg-story-red shadow-[0_0_10px_rgba(220,38,38,0.5)] h-0 mx-auto"
-                    />
-                </div>
+
 
                 {/* CONTENT */}
                 <div className="relative z-10">
