@@ -124,7 +124,7 @@ export default function Hero() {
                             <span className="text-[10px] uppercase text-zinc-500 font-mono tracking-wider group-hover:text-cyan-400">Current Role</span>
                             <span className="text-sm font-bold text-white flex items-center gap-2">
                                 <Cpu size={14} className="text-cyan-500 animate-spin bg-cyan-500/10 rounded p-0.5" style={{ animationDuration: '3s' }} />
-                                AI Engineer
+                                ML Engineer
                             </span>
                         </div>
 
