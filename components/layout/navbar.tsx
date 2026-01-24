@@ -47,7 +47,7 @@ export default function Navbar() {
                     Musfiqur Tuhin
                 </h1>
                 <p className="text-[10px] md:text-xs opacity-70 hidden sm:block ml-2">
-                    {mode === "corporate" ? "AI & Machine Learning" : "The Living Archive"}
+                    {mode === "corporate" ? "AI & Machine Learning" : ""}
                 </p>
             </div>
 

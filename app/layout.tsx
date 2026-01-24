@@ -23,7 +23,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Musfiqur Tuhin | The Living Archive",
+  title: "Musfiqur Tuhin",
   description: "AI Researcher, Activist, Artist - A Digital Universe.",
 };
 
