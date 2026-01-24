@@ -84,7 +84,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative h-screen w-full bg-[#F5F5F7] text-[#1A1A1A] overflow-hidden flex flex-col justify-between py-20 md:py-0">
+        <section className="relative h-screen w-full bg-[#F5F5F7] text-[#1A1A1A] overflow-hidden flex flex-col justify-between py-8 md:py-0">
 
             {/* Animated Canvas Background */}
             <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-100" />
@@ -95,14 +95,14 @@ export default function Hero() {
             </div>
 
             {/* --- TOP: THINKER --- */}
-            <div className="relative z-10 flex justify-center items-start pt-16 md:pt-20">
-                <h1 className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
+            <div className="relative z-10 flex justify-center items-start pt-12 md:pt-20 flex-shrink-0">
+                <h1 className="text-[13vw] sm:text-[12vw] md:text-[10vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
                     THINKER.
                 </h1>
             </div>
 
             {/* --- CENTER: THE MONOLITH --- */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[240px] sm:w-[280px] md:w-[350px] lg:w-[400px] group">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[250px] sm:w-[280px] md:w-[350px] lg:w-[400px] group">
 
                 {/* The Image Container */}
                 <div className="relative bg-black shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
@@ -133,8 +133,8 @@ export default function Hero() {
             </div>
 
             {/* --- BOTTOM: ORGANIZER --- */}
-            <div className="relative z-10 flex justify-center items-end pb-16 md:pb-20">
-                <h1 className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
+            <div className="relative z-10 flex justify-center items-end pb-12 md:pb-20 flex-shrink-0">
+                <h1 className="text-[13vw] sm:text-[12vw] md:text-[10vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
                     ORGANIZER.
                 </h1>
             </div>
