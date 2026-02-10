@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { travelData } from "@/lib/travel-data";
 import dynamic from "next/dynamic";
 import type { LatLngExpression, LeafletMouseEvent } from "leaflet";
@@ -290,12 +291,13 @@ export default function TravelMapInteractive() {
                                 >
                                     {/* Polaroid Frame */}
                                     <div className="bg-white p-2 shadow-xl rounded-lg transform hover:scale-105 transition-transform duration-300">
-                                        <div className={`${isLarge ? "w-32 h-32 md:w-48 md:h-48" : "w-24 h-24 md:w-32 md:h-32"} rounded-full overflow-hidden border-4 border-white shadow-inner bg-stone-100`}>
-                                            <img
+                                        <div className={`${isLarge ? "w-32 h-32 md:w-48 md:h-48" : "w-24 h-24 md:w-32 md:h-32"} rounded-full overflow-hidden border-4 border-white shadow-inner bg-stone-100 relative`}>
+                                            <Image
                                                 src={`/images/Travel/${filename}`}
                                                 alt={`Travel ${idx + 1}`}
-                                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                                                loading="lazy"
+                                                fill
+                                                sizes="(max-width: 768px) 128px, 192px"
+                                                className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                             />
                                         </div>
                                     </div>
