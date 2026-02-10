@@ -44,6 +44,32 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  // 4. Redirects (Identity Unification)
+  async redirects() {
+    return [
+      {
+        source: '/tuhin',
+        destination: '/identity',
+        permanent: true,
+      },
+      {
+        source: '/musfiqur-tuhin',
+        destination: '/identity',
+        permanent: true,
+      },
+      {
+        source: '/m-m-rahman',
+        destination: '/identity',
+        permanent: true,
+      },
+      {
+        source: '/about/names', // Fallback for user request suggestion
+        destination: '/identity',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);

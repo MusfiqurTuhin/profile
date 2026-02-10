@@ -34,10 +34,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://musfiqurtuhin.me'),
   title: {
-    default: 'Md. Musfiqur Rahman | Machine Learning Engineer & Activist',
+    default: 'Md. Musfiqur Rahman (Tuhin) — Researcher, Designer, Founder',
     template: '%s | Musfiqur Tuhin',
   },
-  description: 'The living archive of Md. Musfiqur Rahman. 7+ Scopus publications in AI, founder of Muktanchol, and leader in the July Revolution. Explore the intersection of Logic and Legacy.',
+  description: 'Md. Musfiqur Rahman (Tuhin) — researcher & designer. Publications as Md. Musfiqur Rahman. Also known as মুশফিকুর রহমান / Tuhin. Portfolio, papers, and social links.',
   keywords: [
     'Md. Musfiqur Rahman',
     'Musfiqur Tuhin',
@@ -46,7 +46,16 @@ export const metadata: Metadata = {
     'July Revolution Leader',
     'Muktanchol',
     'Prompt Injection Research',
-    'Computer Vision Engineer'
+    'Computer Vision Engineer',
+    // Name Variations
+    "Md. Musfiqur Rahman Tuhin", "Musfiqur Rahman Tuhin", "Musfiq Tuhin", "Tuhin Rahman",
+    "Musfiqur Tuhin", "Md Musfiqur Rahman", "M. Musfiqur Rahman", "M. M. Rahman",
+    "Musfiqur R. Tuhin", "Tuhin Musfiqur", "Mushfiqur Rahman", "Mushfiq Tuhin",
+    "Mosfiqur Rahman", "Mosfikur Rahman", "Musfikur Rahman", "Musfik Tuhin",
+    "Moshfiqur Rahman", "Musfiqur Rahaman", "Musfiqur Rehman", "Tuheen", "Tohin",
+    "মোঃ মুশফিকুর রহমান", "মুশফিকুর রহমান তুহিন", "মুশফিক তুহিন", "মুসফিকুর রহমান",
+    "মুসফিক তুহিন", "মোঃ মুসফিকুর রহমান", "মো: মুশফিকুর রহমান", "মুশফিকুর রাহমান",
+    "তুহিন", "মুশফিক"
   ],
   authors: [{ name: 'Md. Musfiqur Rahman', url: 'https://musfiqurtuhin.me' }],
   creator: 'Md. Musfiqur Rahman',

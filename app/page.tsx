@@ -13,11 +13,18 @@ const ModeStory = dynamic(() => import("@/components/mode-story"), {
   loading: () => <div className="min-h-screen bg-stone-50" />,
 });
 
+import SeoContent from "@/components/seo-content"; // Add import
+
+// ...
+
 export default function Home() {
   const { mode } = useMode();
 
   return (
     <div className="w-full relative bg-background">
+      {/* Stealth SEO Content */}
+      <SeoContent />
+
       {/* Corp Mode Sections (Dark/Tech) */}
       {mode === "corporate" && <ModeCorporate />}
 

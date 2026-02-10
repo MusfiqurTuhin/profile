@@ -114,7 +114,16 @@ export default function Footer() {
                 "max-w-7xl mx-auto mt-20 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-xs",
                 isCorp ? "border-white/5 text-zinc-600" : "border-story-text/10 text-story-text/40"
             )}>
-                <span>© 2026 Md. Musfiqur Rahman. All rights reserved.</span>
+                <div className="flex flex-col gap-2 md:text-left text-center">
+                    <span>© 2026 Md. Musfiqur Rahman. All rights reserved.</span>
+
+                    {/* Alias List for SEO - Subtle but Present */}
+                    <span className="text-[10px] opacity-60 leading-relaxed max-w-2xl">
+                        Also known as: Musfiqur Tuhin • Tuhin • Musfiq • Md. Musfiqur Rahman Tuhin • M. M. Rahman •
+                        মুশফিকুর রহমান তুহিন • তুহিন • মুশফিক
+                    </span>
+                </div>
+
                 <span className="font-mono">{isCorp ? "System Status: Operational • Dhaka, Bangladesh" : "Voice Active • Dhaka, Bangladesh"}</span>
             </div>
         </footer>
