@@ -11,13 +11,13 @@ import { ArrowDown, Cpu, Activity, ShieldCheck, Terminal } from "lucide-react";
 export default function Hero() {
     const container = useRef<HTMLDivElement>(null);
     const { mode } = useMode();
-    const [glitchText, setGlitchText] = useState("MUSFIQUR TUHIN");
+    const [glitchText, setGlitchText] = useState("MD. MUSFIQUR RAHMAN");
 
     // Glitch Effect
     useEffect(() => {
         const interval = setInterval(() => {
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
-            const original = "MUSFIQUR TUHIN";
+            const original = "MD. MUSFIQUR RAHMAN";
             let iterations = 0;
 
             const glitchInterval = setInterval(() => {
@@ -171,7 +171,7 @@ export default function Hero() {
                 <div className="relative text-center md:text-left mix-blend-screen">
                     <div className="w-24 h-1 hero-line mb-6 hidden md:block bg-cyan-500" />
 
-                    <h1 className="glitch-title text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white filter drop-shadow-[0_0_10px_rgba(0,240,255,0.3)]">
+                    <h1 className="glitch-title text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white filter drop-shadow-[0_0_10px_rgba(0,240,255,0.3)]">
                         {glitchText}
                     </h1>
 

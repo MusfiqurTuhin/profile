@@ -97,9 +97,9 @@ export default function Hero() {
 
             {/* --- TOP: THINKER --- */}
             <div className="relative z-10 flex justify-center items-start pt-24 sm:pt-20 md:pt-24 flex-shrink-0">
-                <h1 className="text-[11vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
+                <div role="heading" aria-level={2} className="text-[11vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
                     THINKER.
-                </h1>
+                </div>
             </div>
 
             {/* --- CENTER: THE MONOLITH --- */}
@@ -117,11 +117,11 @@ export default function Hero() {
                         className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                     />
 
-                    {/* Tech Detail: Corner Label */}
+                    {/* Tech Detail: Corner Label -> H1 for SEO */}
                     <div className="absolute top-0 left-0 bg-white/10 backdrop-blur-md px-2 md:px-3 py-1">
-                        <span className="font-mono text-[8px] md:text-[10px] text-white tracking-widest uppercase">
-                            Archive_ID: 2002
-                        </span>
+                        <h1 className="font-mono text-[8px] md:text-[10px] text-white tracking-widest uppercase m-0">
+                            Md. Musfiqur Rahman (Tuhin)
+                        </h1>
                     </div>
                 </div>
 
@@ -138,9 +138,9 @@ export default function Hero() {
 
             {/* --- BOTTOM: ORGANIZER --- */}
             <div className="relative z-10 flex justify-center items-end pb-20 sm:pb-16 md:pb-20 flex-shrink-0">
-                <h1 className="text-[11vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
+                <div role="heading" aria-level={2} className="text-[11vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] font-black tracking-tighter leading-none text-[#1A1A1A] select-none">
                     ORGANIZER.
-                </h1>
+                </div>
             </div>
 
             {/* --- FOOTER: DATA STREAM --- */}
