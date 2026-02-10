@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useMode } from "@/components/context/mode-context";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { Frame, BookOpen } from "lucide-react"; // Icons for Corporate/Story
 
 export default function Navbar() {
@@ -130,18 +129,6 @@ export default function Navbar() {
                             </button>
                         ))}
 
-                        {/* About Link - Desktop */}
-                        <Link
-                            href="/about"
-                            className={cn(
-                                "text-xs uppercase tracking-widest transition-colors hover:scale-105 active:scale-95 ml-4 px-3 py-1 rounded border",
-                                mode === "corporate"
-                                    ? "font-mono text-cyan-400 border-cyan-400/30 hover:bg-cyan-400/10"
-                                    : "font-sans font-bold text-story-red border-story-red/30 hover:bg-story-red/5"
-                            )}
-                        >
-                            About
-                        </Link>
                     </div>
 
                     {/* Mobile/Tablet Hamburger */}
@@ -175,16 +162,6 @@ export default function Navbar() {
                         {link.label}
                     </button>
                 ))}
-                {/* About Link - Mobile */}
-                <Link
-                    href="/about"
-                    className={cn(
-                        "text-sm uppercase tracking-widest font-bold mt-4 border-t pt-4 w-full text-right",
-                        mode === "corporate" ? "text-cyan-600 border-black/10" : "text-story-red border-white/10"
-                    )}
-                >
-                    About / Bio
-                </Link>
             </div>
         </>
     );
